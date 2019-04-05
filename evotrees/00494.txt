@@ -1,4 +1,4 @@
--> 494 Bastet
+   494 Bastet
    |-> 495 Love Deity, Feline Bastet
    |   |-> 888 Feline Deity of Harmony, Bastet
    |   |-> 1613 Moonlit Feline Goddess, Bastet

@@ -1,1 +1,3 @@
--> 100596 Alt. Hera-Is
+   596 Hera-Is
+   |-> 597 Awoken Hera-Is
+   |   |-> 1737 Permafrost Queen, Hera-Is

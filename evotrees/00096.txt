@@ -1,4 +1,4 @@
--> 96 Succubus
+   96 Succubus
    |-> 97 Lilith
    |   |-> 205 Witch of the Night, Lilith
    |   |   |-> 1105 Moonbeam Fang Witch, Lilith

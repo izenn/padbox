@@ -1,1 +1,2 @@
--> 104395 Guard Dog of Hades, Cerberus
+   4395 Guard Dog of Hades, Cerberus
+   |-> 4396 Skill Card: Agidyne

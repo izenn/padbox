@@ -1,3 +1,1 @@
--> 1004 Lil' Snow Globe Dragon Noir
-   |-> 101006 Snow Globe Dragon Noir
-   |-> 201006 Snow Globe Dragon Noir
+   1004 Lil' Snow Globe Dragon Noir

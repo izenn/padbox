@@ -33,7 +33,7 @@ $output = '<!DOCTYPE html>
 <head>
 <meta charset="utf-8"/>
  <!-- CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 
 <!-- jQuery -->
@@ -43,7 +43,7 @@ $output = '<!DOCTYPE html>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js "></script>
 
 <!-- Bootstrap -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
 <style>
 .tooltip-inner {
@@ -57,6 +57,39 @@ td, th {
 }
 button {
   width: 33%;
+  -moz-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+  box-shadow:inset 0px 1px 0px 0px #54a3f7;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
+  background:-moz-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+  background:-webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+  background:-o-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+  background:-ms-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+  background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#007dc1", endColorstr="#0061a7",GradientType=0);
+  background-color:#007dc1;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+  border:1px solid #124d77;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:13px;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #154682;
+}
+button:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
+  background:-moz-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+  background:-webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+  background:-o-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+  background:-ms-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+  background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#0061a7", endColorstr="#007dc1",GradientType=0);
+  background-color:#0061a7;
 }
 .card {
   border: none;
@@ -65,6 +98,7 @@ button {
   position: relative;
   width: 98px;
   height: 98px;
+  display: table-cell;
 }
 
 .card img {
@@ -75,14 +109,19 @@ button {
 }
 
 .tooltip-inner {
-   text-align:left;
+  text-align:left;
+  background-color: white;
  }
 </style>
 </head>
 <body>
-<button type="button" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordian1" href="#collapseOne"> Friend List </button> <button type="button" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordian2" href="#collapseTwo"> Rem Plus </button>  <button type="button" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordian3" href="#collapseThree"> Mats </button></p>';
-
-$output .= "<div id='collapseOne' class='panel-collapse collapse'>
+<div id=buttonGroup>
+<p>
+<button type="button" class="collapsed" role="button" data-toggle="collapse" href="#collapseOne"> Friend List </button>
+<button type="button" class="collapsed" role="button" data-toggle="collapse" href="#collapseTwo"> Rem Plus </button>
+<button type="button" class="collapsed" role="button" data-toggle="collapse" href="#collapseThree"> Mats </button>
+</p>';
+$output .= "<div id='collapseOne' class='panel-collapse collapse' data-parent='#buttonGroup'>
 <table style='width: 100%'>
 <tr>";
 
@@ -435,7 +474,7 @@ foreach my $line (@monsterarray) {
   };
 };
 
-$output .= "<div id='collapseTwo' class='panel-collapse collapse'>\n";
+$output .= "<div id='collapseTwo' class='panel-collapse collapse' data-parent='#buttonGroup'>\n";
 $output .= "  <table id='box' style='width:100%'>
     <thead>
       <tr><th>ID</th><th style='display:none'>Main Attr</th><th style='display:none'>Sub Attr</th><th>Name</th><th>Rarity</th><th>Level</th><th>Type</th><th>Evo Tree</th><th>Skill</th><th>Awoken</th><th>Latent</th><th>HP</th><th>ATK</th><th>RCV</th><th>MP</th></tr></thead>\n    <tbody>";
@@ -446,7 +485,7 @@ $output .= "    </tbody>
   </table>
 </div>\n\n";
 
-$output .= "<div id='collapseThree' class='panel-collapse collapse'>\n";
+$output .= "<div id='collapseThree' class='panel-collapse collapse' data-parent='#buttonGroup'>\n";
 $output .= "  <table id='mats' style='width:100%'>
     <thead>
       <tr><th>ID</th><th style='display:none'>Main Attr</th><th style='display:none'>Sub Attr</th><th>Name</th><th>Rarity</th><th>Level</th><th>Type</th><th>Evo Tree</th><th>Skill</th><th>Awoken</th><th>Latent/Count</th><th>HP</th><th>ATK</th><th>RCV</th><th>MP</th></tr></thead>\n    <tbody>";
@@ -455,6 +494,7 @@ $output .= join "\n", @mats;
 
 $output .= "    </tbody>
   </table>
+</div>
 </div>\n\n";
 
 

@@ -1,4 +1,4 @@
--> 80 Ice Golem
+   80 Ice Golem
    |-> 81 Ice Guardian
    |   |-> 317 Water Mech Warrior, Midgard
    |   |   |-> 1273 Blue Mech General, Mar Midgard

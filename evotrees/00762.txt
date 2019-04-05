@@ -1,2 +1,2 @@
--> 762 OCTOPUS
+   762 OCTOPUS
    |-> 763 OCTOPUS Ver.2

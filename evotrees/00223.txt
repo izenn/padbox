@@ -1,4 +1,4 @@
--> 223 Highlander
+   223 Highlander
    |-> 224 Cu Chulainn, the Green Lancer
    |   |-> 514 More Cu Chulainn, the Hero
    |   |   |-> 693 Noble Wolf King Hero, Cu Chulainn

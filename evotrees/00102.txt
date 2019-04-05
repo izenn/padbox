@@ -1,4 +1,4 @@
--> 102 Mystic Stone Knight
+   102 Mystic Stone Knight
    |-> 103 Dragon Knight
    |   |-> 231 Ancient Dragon Knight
    |   |   |-> 824 Ancient Dragon Knight, Zeal

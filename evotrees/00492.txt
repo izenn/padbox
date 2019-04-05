@@ -1,4 +1,4 @@
--> 492 Isis
+   492 Isis
    |-> 493 Water Deity, Holy Isis
    |   |-> 996 Blue Moon Sea Deity, Isis
    |   |-> 997 Shining Sea Deity, Isis

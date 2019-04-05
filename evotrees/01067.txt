@@ -1,4 +1,4 @@
--> 1067 Andromeda
+   1067 Andromeda
    |-> 1068 Starsea Goddess, Andromeda
    |   |-> 1733 Blue Chain Starsea Goddess, Andromeda
    |   |   |-> 2658 Adored Starsea Goddess, Andromeda

@@ -1,4 +1,4 @@
--> 221 Berserk
+   221 Berserk
    |-> 222 Siegfried, the Blue Champion
    |   |-> 513 King Siegfried, Blue Champion
    |   |   |-> 692 Earth-Rending Emperor, Siegfried

@@ -1,2 +1,2 @@
--> 4617 Navigator's Compass
+   4617 Navigator's Compass
    |-> 4618 Weatherlight

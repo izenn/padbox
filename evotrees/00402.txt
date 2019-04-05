@@ -1,3 +1,3 @@
--> 402 Griffin
+   402 Griffin
    |-> 403 Griffin, the Hunter of Tempests
    |   |-> 1212 Royal Hunting Beast, Griffin

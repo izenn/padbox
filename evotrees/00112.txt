@@ -1,4 +1,4 @@
--> 112 Salamander
+   112 Salamander
    |-> 113 Ifrit
    |   |-> 322 Blue Flame Ifrit
    |   |-> 323 Green Flame Ifrit

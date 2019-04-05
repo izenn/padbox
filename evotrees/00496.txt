@@ -1,4 +1,4 @@
--> 496 Ra
+   496 Ra
    |-> 497 Sun Deity Ra
    |   |-> 998 Dark Sun Deity, Ra
    |   |-> 999 Pure Light Sun Deity, Ra

@@ -1,4 +1,4 @@
--> 62 Red Ogre
+   62 Red Ogre
    |-> 63 Samurai Ogre
    |   |-> 310 Ice Samurai Ogre
    |   |-> 311 Wood Samurai Ogre

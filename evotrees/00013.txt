@@ -1,4 +1,4 @@
--> 13 Pterra
+   13 Pterra
    |-> 14 Pteras
    |   |-> 15 Pterados
    |   |   |-> 16 Sundragon Pterados

@@ -1,4 +1,4 @@
--> 114 Sea Serpent
+   114 Sea Serpent
    |-> 115 Leviathan
    |   |-> 326 Red Ice Leviathan
    |   |-> 327 Green Ice Leviathan

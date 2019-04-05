@@ -1,4 +1,4 @@
--> 2272 Akechi Mitsuhide
+   2272 Akechi Mitsuhide
    |-> 2273 Deliberate Rebel, Akechi Mitsuhide
    |   |-> 3109 Meticulous Rebel, Akechi Mitsuhide
    |   |-> 3110 Melancholic Rebel, Akechi Mitsuhide

@@ -1,7 +1,6 @@
--> 110 Vampire
+   110 Vampire
    |-> 111 Vampire Lord
    |   |-> 516 Duke Vampire Lord
    |   |   |-> 894 Dark Liege, Vampire Duke
    |   |   |   |-> 3921 Duke Cloak
    |   |   |-> 895 Arcane Monarch, Vampire Duke
-   |-> 100111 Alt. Vampire Lord

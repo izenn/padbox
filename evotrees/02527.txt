@@ -1,2 +1,2 @@
--> 2527 Machine Zeus
+   2527 Machine Zeus
    |-> 2528 Awoken Machine Zeus

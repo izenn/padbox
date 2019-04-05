@@ -1,4 +1,4 @@
--> 632 Amon
+   632 Amon
    |-> 633 Blizzard Archdemon Amon
    |   |-> 1258 Chivalrous Demon Lord, Amon
    |   |   |-> 2504 Resolved Demon Lord, Amon

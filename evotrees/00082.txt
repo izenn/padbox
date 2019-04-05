@@ -1,4 +1,4 @@
--> 82 Earth Golem
+   82 Earth Golem
    |-> 83 Earth Guardian
    |   |-> 318 Wood Mech Warrior, Asgard
    |   |   |-> 1274 Green Mech General, Viz Asgard

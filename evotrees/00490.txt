@@ -1,4 +1,4 @@
--> 490 Horus
+   490 Horus
    |-> 491 Flame Deity, Falcon Horus
    |   |-> 994 Inferno Deity Falcon, Horus
    |   |-> 995 Blazing Deity Falcon, Horus

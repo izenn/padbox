@@ -1,2 +1,2 @@
--> 3748 Tethys
+   3748 Tethys
    |-> 3749 Awoken Tethys

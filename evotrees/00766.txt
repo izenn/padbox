@@ -1,2 +1,2 @@
--> 766 SQUID
+   766 SQUID
    |-> 767 SQUID Ver.2

@@ -1,1 +1,5 @@
--> 100189 Alt. Hera
+   189 Hera
+   |-> 190 Awoken Hera
+   |   |-> 985 Divine Queen Hera
+   |   |   |-> 3902 Hera-Nyx
+   |   |   |   |-> 3903 Devil Star Divine Queen, Hera-Nyx

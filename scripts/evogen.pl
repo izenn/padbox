@@ -19,6 +19,8 @@ my $count = keys $decodedmonster;
 my %evohash;
 
 for (my $i = 1; $i < $count; $i++) {
+  next if $decodedmonster->[$i]{'card'}{'card_id'} > 9999; 
+  
     $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'name'} = $decodedmonster->[$i]{'card'}{'name'},
     $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'ancestor'} = $decodedmonster->[$i]{'card'}{'ancestor_id'},
     $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'id'} = $decodedmonster->[$i]{'card'}{'card_id'},
@@ -71,7 +73,11 @@ sub draw_tree {
   $level //= 0;
 
   # Report the card...
-  print "   |" x $level, "-> ", $root_node->{'id'} . " " .  $root_node->{'name'} . "\n";
+  if ( $level == 0 ) {
+    print "   ", $root_node->{'id'} . " " .  $root_node->{'name'} . "\n";
+  } else {
+    print "   |" x $level, "-> ", $root_node->{'id'} . " " .  $root_node->{'name'} . "\n";
+  }
 
   # Recursively report their evo...
   for my $subordinate (@{$root_node->{'evo'}}) {

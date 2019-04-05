@@ -1,4 +1,4 @@
--> 225 Valkyrie
+   225 Valkyrie
    |-> 226 Great Valkyrie
    |   |-> 515 Princess Valkyrie
    |   |   |-> 694 Warrior Rose, Graceful Valkyrie

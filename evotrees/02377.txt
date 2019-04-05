@@ -1,2 +1,2 @@
--> 2377 Female Titan
+   2377 Female Titan
    |-> 2378 Combat State, Female Titan

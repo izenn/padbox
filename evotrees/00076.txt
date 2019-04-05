@@ -1,3 +1,3 @@
--> 76 Black Fighter
+   76 Black Fighter
    |-> 77 Black Knight
    |   |-> 910 Black Baron

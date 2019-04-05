@@ -1,4 +1,4 @@
--> 636 Baal
+   636 Baal
    |-> 637 Lightning Archdemon Baal
    |   |-> 1261 Haughty Demon Lord, Baal
    |   |   |-> 2506 King's Gaze Demon Lord, Baal

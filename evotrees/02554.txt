@@ -1,4 +1,4 @@
--> 2554 Acubens
+   2554 Acubens
    |-> 2555 Pincers Mechanical Star God, Acubens
    |   |-> 3584 Crimson Pincers Mechanical Star God, Acubens
    |   |-> 3585 Blade Pincers Mechanical Star God, Acubens

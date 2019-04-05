@@ -1,2 +1,2 @@
--> 1543 Yellow Shieldra
+   1543 Yellow Shieldra
    |-> 1544 Light Shield Knight

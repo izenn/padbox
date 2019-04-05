@@ -1,4 +1,4 @@
--> 573 Apollo
+   573 Apollo
    |-> 574 Solar Deity Apollo
    |   |-> 892 Solar God of Heaven's Bow, Apollo
    |   |-> 2238 Brilliant Sun Deity, Apollo
