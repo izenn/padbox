@@ -114,9 +114,8 @@ button:hover {
 <button type="button" class="collapsed" role="button" data-toggle="collapse" href="#collapseTwo"> Rem Plus </button>
 <button type="button" class="collapsed" role="button" data-toggle="collapse" href="#collapseThree"> Mats </button>
 <button onclick="topFunction()" id="topbutton" title="Go to top">Top</button>
-
 </p>';
-$output .= "<div id='collapseOne' class='panel-collapse collapse' data-parent='#buttonGroup'>
+$output .= "\n<div id='collapseOne' class='panel-collapse collapse' data-parent='#buttonGroup'>
 <table style='width: 100%'>
 <tr>";
 
@@ -344,19 +343,19 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
         $latentarray[$l] = "<img src='images/latents/impatk.png' alt='Imp. ATK'>";
       } elsif ( $latentarray[$l] =~ m/0000110/ ) {
         $latentarray[$l] = "<img src='images/latents/imprcv.png' alt='Imp. RCV'>";
-      } elsif ( $latentarray[$l] =~ m/aaaaaaa/ ) {
+      } elsif ( $latentarray[$l] =~ m/0001010/ ) {
         $latentarray[$l] = "<img src='images/latents/autoheal.png' alt='Auto-Heal'>";
       } elsif ( $latentarray[$l] =~ m/0001000/ ) {
         $latentarray[$l] = "<img src='images/latents/exttime.png' alt='Ext. Move Time'>";
-      } elsif ( $latentarray[$l] =~ m/aaaaaaa/ ) {
+      } elsif ( $latentarray[$l] =~ m/0001100/ ) {
         $latentarray[$l] = "<img src='images/latents/firedr.png' alt='Fire Dmg. Red.'>";
-      } elsif ( $latentarray[$l] =~ m/aaaaaaa/ ) {
+      } elsif ( $latentarray[$l] =~ m/0001110/ ) {
         $latentarray[$l] = "<img src='images/latents/waterdr.png' alt='Water Dmg. Red.'>";
-      } elsif ( $latentarray[$l] =~ m/aaaaaaa/ ) {
+      } elsif ( $latentarray[$l] =~ m/0010000/ ) {
         $latentarray[$l] = "<img src='images/latents/wooddr.png' alt='Wood Dmg. Red.'>";
-      } elsif ( $latentarray[$l] =~ m/aaaaaaa/ ) {
+      } elsif ( $latentarray[$l] =~ m/0010010/ ) {
         $latentarray[$l] = "<img src='images/latents/lightdr.png' alt='Light Dmg. Red.'>";
-      } elsif ( $latentarray[$l] =~ m/aaaaaaa/ ) {
+      } elsif ( $latentarray[$l] =~ m/0010100/ ) {
         $latentarray[$l] = "<img src='images/latents/darkdr.png' alt='Dark Dmg. Red.'>";
       } elsif ( $latentarray[$l] =~ m/0010110/ ) {
         $latentarray[$l] = "<img src='images/latents/sdr.png' alt='Skill Delay Resist.'>";
@@ -375,7 +374,7 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
       } elsif ( $latentarray[$l] =~ m/0101110/ ) {
         $latentarray[$l] = "<img src='images/latents/machinekiller.png' alt='Machine Killer'>";
         splice @latentarray, $l+1, 1;
-      } elsif ( $latentarray[$l] =~ m/aaaaaaa/ ) {
+      } elsif ( $latentarray[$l] =~ m/0110000/ ) {
         $latentarray[$l] = "<img src='images/latents/balancedkiller.png' alt='Balanced Killer'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0110010/ ) {
@@ -384,7 +383,7 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
       } elsif ( $latentarray[$l] =~ m/0110100/ ) {
         $latentarray[$l] = "<img src='images/latents/physicalkiller.png' alt='Physical Killer'>";
         splice @latentarray, $l+1, 1;
-      } elsif ( $latentarray[$l] =~ m/aaaaaaa/ ) {
+      } elsif ( $latentarray[$l] =~ m/0110110/ ) {
         $latentarray[$l] = "<img src='images/latents/healerkiller.png' alt='Healer Killer'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0111000/ ) {
@@ -399,16 +398,16 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
       } elsif ( $latentarray[$l] =~ m/0111110/ ) {
         $latentarray[$l] = "<img src='images/latents/exttimeplus.png' alt='Ext. Move Time+'>";
         splice @latentarray, $l+1, 1;
-      } elsif ( $latentarray[$l] =~ m/aaaaaaa/ ) {
+      } elsif ( $latentarray[$l] =~ m/0100000/ ) {
         $latentarray[$l] = "<img src='images/latents/evokiller.png' alt='Evo Material Killer'>";
         splice @latentarray, $l+1, 1;
-      } elsif ( $latentarray[$l] =~ m/aaaaaaa/ ) {
+      } elsif ( $latentarray[$l] =~ m/0100010/ ) {
         $latentarray[$l] = "<img src='images/latents/awokenkiller.png' alt='Awoken Material Killer'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0100100/ ) {
         $latentarray[$l] = "<img src='images/latents/enhancedkiller.png' alt='Enhanced Material Killer'>";
         splice @latentarray, $l+1, 1;
-      } elsif ( $latentarray[$l] =~ m/aaaaaaa/ ) {
+      } elsif ( $latentarray[$l] =~ m/0100110/ ) {
         $latentarray[$l] = "<img src='images/latents/redeemablekiller.png' alt='Redeemable Material Killer'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0101100/ ) {
@@ -553,4 +552,6 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </body>
 </html>';
 
-print $output . "\n";
+open (my $fh, '>', "docs/index.html");
+  print $fh $output;
+close $fh;

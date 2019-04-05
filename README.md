@@ -13,15 +13,18 @@ Beta
 ----
   * awakening lists/images
   * super awakenings
-  * ~~beautify friend page~~
-  * redo tooltips
+  * ~~overhaul friend page~~
+  * redo tooltips for friend leads
+  * add tooltips to box pages?
   * ~~add my teams list~~
+  * badge icons
   * add self data
   * add assists
   * upload utility scripts (~~genevo~~, render, and cuttile)
   * document how to get json
   * document how to mine assets
-  * package for windows
+  * package for windows?
+  * lazy image loading
 
 Thanks
 ------
