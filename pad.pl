@@ -57,38 +57,20 @@ td, th {
 }
 button {
   width: 33%;
-  -moz-box-shadow:inset 0px 1px 0px 0px #54a3f7;
-  -webkit-box-shadow:inset 0px 1px 0px 0px #54a3f7;
   box-shadow:inset 0px 1px 0px 0px #54a3f7;
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
-  background:-moz-linear-gradient(top, #007dc1 5%, #0061a7 100%);
-  background:-webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
-  background:-o-linear-gradient(top, #007dc1 5%, #0061a7 100%);
-  background:-ms-linear-gradient(top, #007dc1 5%, #0061a7 100%);
   background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#007dc1", endColorstr="#0061a7",GradientType=0);
   background-color:#007dc1;
-  -moz-border-radius:3px;
-  -webkit-border-radius:3px;
   border-radius:3px;
   border:1px solid #124d77;
   display:inline-block;
   cursor:pointer;
   color:#ffffff;
-  font-family:Arial;
-  font-size:13px;
   padding:6px 24px;
   text-decoration:none;
   text-shadow:0px 1px 0px #154682;
 }
 button:hover {
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
-  background:-moz-linear-gradient(top, #0061a7 5%, #007dc1 100%);
-  background:-webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
-  background:-o-linear-gradient(top, #0061a7 5%, #007dc1 100%);
-  background:-ms-linear-gradient(top, #0061a7 5%, #007dc1 100%);
   background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#0061a7", endColorstr="#007dc1",GradientType=0);
   background-color:#0061a7;
 }
 .card {
@@ -112,14 +94,27 @@ button:hover {
   text-align:left;
   background-color: white;
  }
+
+#topbutton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  cursor: pointer;
+  width: 100px;
+}
+
 </style>
 </head>
 <body>
 <div id=buttonGroup>
 <p>
-<button type="button" class="collapsed" role="button" data-toggle="collapse" href="#collapseOne"> Friend List </button>
+<button type="button" class="collapsed" role="button" data-toggle="collapse" href="#collapseOne"> Friends/Teams </button>
 <button type="button" class="collapsed" role="button" data-toggle="collapse" href="#collapseTwo"> Rem Plus </button>
 <button type="button" class="collapsed" role="button" data-toggle="collapse" href="#collapseThree"> Mats </button>
+<button onclick="topFunction()" id="topbutton" title="Go to top">Top</button>
+
 </p>';
 $output .= "<div id='collapseOne' class='panel-collapse collapse' data-parent='#buttonGroup'>
 <table style='width: 100%'>
@@ -345,9 +340,9 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
         next;
       } elsif ( $latentarray[$l] =~ m/0000010/ ) {
         $latentarray[$l] = "<img src='images/latents/imphp.png' alt='Imp. HP'>";
-      } elsif ( $latentarray[$l] =~ m/aaaaaaa/ ) {
+      } elsif ( $latentarray[$l] =~ m/0000100/ ) {
         $latentarray[$l] = "<img src='images/latents/impatk.png' alt='Imp. ATK'>";
-      } elsif ( $latentarray[$l] =~ m/aaaaaaa/ ) {
+      } elsif ( $latentarray[$l] =~ m/0000110/ ) {
         $latentarray[$l] = "<img src='images/latents/imprcv.png' alt='Imp. RCV'>";
       } elsif ( $latentarray[$l] =~ m/aaaaaaa/ ) {
         $latentarray[$l] = "<img src='images/latents/autoheal.png' alt='Auto-Heal'>";
@@ -523,6 +518,23 @@ $(document).ready(function() {
     order: [[ 1, \'asc\' ], [ 4, \'desc\' ], [ 2, \'asc\' ], [ 0, \'desc\' ]]
   } );
 } );
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("topbutton").style.display = "block";
+  } else {
+    document.getElementById("topbutton").style.display = "none";
+  }
+}
+  
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
   "alt-string-pre": function ( a ) {
