@@ -9,6 +9,7 @@ my $boxjson;
 my $monsterjson;
 my $output;
 
+print "importing box json\n";
 {
   local $/=undef;
   open FILE, "pad.json" or die "Couldn't open file: $!";
@@ -16,6 +17,7 @@ my $output;
   close FILE;
 }
 
+print "importing monster json\n";
 {
   local $/=undef;
   open FILE, "paddata_processed_na_cards.json" or die "Couldn't open file: $!";
@@ -26,7 +28,7 @@ my $output;
 my $decodedbox = decode_json($boxjson);
 my $decodedmonster = decode_json($monsterjson);
 
-my $friendcount = keys $decodedbox->{'friends'};
+my $friendcount = scalar(@{$decodedbox->{'friends'}});
 
 $output = '<!DOCTYPE html>
 <html lang="en">
@@ -119,6 +121,7 @@ $output .= "\n<div id='collapseOne' class='panel-collapse collapse' data-parent=
 <table style='width: 100%'>
 <tr>";
 
+print "generating friend list\n";
 my @friendarray;
 push @friendarray, "<td style='width:40%;'>
   <table id='friends'>
@@ -148,9 +151,10 @@ push @friendarray, "    </tbody>\n  </table></td>\n";
 $output .= join "\n", @friendarray;
 $output .= "<td style='width:4%'>&nbsp;</td>\n";
 
+print "generating team list\n";
 my @teamarray;
-my $teamcount = keys $decodedbox->{'decksb'}{'decks'};
-my $cardcount = keys $decodedbox->{'card'};
+my $teamcount = scalar(@{$decodedbox->{'decksb'}{'decks'}});
+my $cardcount = scalar(@{$decodedbox->{'card'}});
 
 push @teamarray, "  <td style='width:55%; vertical-align:top'><table id='teams'>
     <thead>
@@ -255,8 +259,8 @@ $output .= join "\n", @teamarray;
 $output .= "</table>
 </div>\n\n";
 
+print "generating box list\n";
 my @monsterarray;
-
 for (my $c = 0; $c < $cardcount; $c++ ) {
   my $monsterline;
   my $cardnum = sprintf("%05d", $decodedbox->{'card'}[$c][5]);
@@ -324,7 +328,7 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
     $skilllevel = $decodedbox->{'card'}[$c][3]
   };
   $monsterline .= "<td>$skilllevel/$skillmax</td>";
-  my $awakenings = keys $decodedmonster->[$cardnum]{'card'}{'awakenings'};
+  my $awakenings = scalar(@{$decodedmonster->[$cardnum]{'card'}{'awakenings'}});
   $monsterline .= "<td>$decodedbox->{'card'}[$c][9]/$awakenings</td>";
   my $latents = sprintf("%049b", $decodedbox->{'card'}[$c][10]);
   my $latentcell;
@@ -552,6 +556,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </body>
 </html>';
 
+print "writing to file\n";
 open (my $fh, '>', "docs/index.html");
   print $fh $output;
 close $fh;
