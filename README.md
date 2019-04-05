@@ -25,18 +25,9 @@ Beta
 
 Thanks
 ------
-<<<<<<< HEAD
 [TheDamian] (https://www.perlmonks.org/?node_id=1232118)  
 Mirubot Team  
 [Kootic] (https://github.com/kiootic/pad-resources)  
 [codywatts] (https://github.com/codywatts/Puzzle-and-Dragons-Texture-Tool)  
 [Mantastic] (https://mantasticpad.com/)  
 [tactical_retreat] (https://www.reddit.com/r/PuzzleAndDragons/comments/b91d0d/unknown_monster_data_json_fields/)  
-=======
-[TheDamian] (https://www.perlmonks.org/?node_id=1232118)
-Mirubot Team
-[Kootic] (https://github.com/kiootic/pad-resources)
-[codywatts] (https://github.com/codywatts/Puzzle-and-Dragons-Texture-Tool)
-[Mantastic] (https://mantasticpad.com/)
-[tactical_retreat] (https://www.reddit.com/r/PuzzleAndDragons/comments/b91d0d/unknown_monster_data_json_fields/)
->>>>>>> 7d3cbea011a76d73713174b2e4df9d289057c1d9
