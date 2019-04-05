@@ -1,4 +1,4 @@
 -> 2358 Levi
    |-> 2359 Survey Corp Lance Corporal, Levi
-   |   |-> 3775 *****
    |   |-> 2360 Mankind's Strongest Soldier, Levi
+   |   |-> 3775 *****

@@ -1,6 +1,6 @@
 -> 3896 Toy Dragon Caller, Cotton
-   |-> 3900 Sacred Beast Toy Dragon Caller, Cotton
-   |-> 3898 Drilling Shark Toy Dragon Caller, Cotton
    |-> 3897 Scorched Claw Toy Dragon Caller, Cotton
-   |-> 3901 Jester Toy Dragon Caller, Cotton
+   |-> 3898 Drilling Shark Toy Dragon Caller, Cotton
    |-> 3899 Horned Fort Toy Dragon Caller, Cotton
+   |-> 3900 Sacred Beast Toy Dragon Caller, Cotton
+   |-> 3901 Jester Toy Dragon Caller, Cotton

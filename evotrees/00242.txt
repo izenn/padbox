@@ -1,6 +1,6 @@
 -> 242 Indra
    |-> 243 Thunderdragon Indra
+   |   |-> 657 Holy Thunderdragon Indra
    |   |-> 1926 Heaven-Shaking Thunderdragon, Indra
    |   |-> 2979 Awoken Indra
    |   |   |-> 3449 Reincarnated Indra
-   |   |-> 657 Holy Thunderdragon Indra

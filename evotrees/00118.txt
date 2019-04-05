@@ -1,7 +1,7 @@
 -> 118 Ivory Dragon
    |-> 119 Divinegon
-   |   |-> 336 Green Shining Divinegon
-   |   |-> 335 Blue Shining Divinegon
-   |   |-> 1110 Light Twin Star Divinegon
-   |   |-> 337 Dark Shining Divinegon
    |   |-> 334 Red Shining Divinegon
+   |   |-> 335 Blue Shining Divinegon
+   |   |-> 336 Green Shining Divinegon
+   |   |-> 337 Dark Shining Divinegon
+   |   |-> 1110 Light Twin Star Divinegon

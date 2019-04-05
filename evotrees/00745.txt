@@ -1,6 +1,6 @@
 -> 745 Incarnation of Suzaku, Leilan
    |-> 746 Heavenly Guide Suzaku, Leilan
+   |   |-> 1262 Divine Flower Suzaku, Leilan
+   |   |-> 1263 Divine Harbinger Suzaku, Leilan
    |   |-> 2073 Awoken Leilan
    |   |   |-> 3487 Reincarnated Leilan
-   |   |-> 1263 Divine Harbinger Suzaku, Leilan
-   |   |-> 1262 Divine Flower Suzaku, Leilan

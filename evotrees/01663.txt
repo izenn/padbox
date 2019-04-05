@@ -1,5 +1,5 @@
 -> 1663 Osiris
    |-> 1664 God of Dark Riches, Osiris
-   |   |-> 4280 Awoken Osiris
-   |   |-> 3453 Soul Reclaimer God of Dark Riches, Osiris
    |   |-> 2386 Soul-Judging God of Dark Riches, Osiris
+   |   |-> 3453 Soul Reclaimer God of Dark Riches, Osiris
+   |   |-> 4280 Awoken Osiris

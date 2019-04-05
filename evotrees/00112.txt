@@ -1,7 +1,7 @@
 -> 112 Salamander
    |-> 113 Ifrit
-   |   |-> 325 Dark Flame Ifrit
-   |   |-> 324 Shining Flame Ifrit
-   |   |-> 323 Green Flame Ifrit
    |   |-> 322 Blue Flame Ifrit
+   |   |-> 323 Green Flame Ifrit
+   |   |-> 324 Shining Flame Ifrit
+   |   |-> 325 Dark Flame Ifrit
    |   |-> 1109 Flame Twin Star Ifrit

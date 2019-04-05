@@ -1,6 +1,6 @@
 -> 807 Okuninushi
    |-> 808 Founder of Nations, Okuninushi
    |   |-> 1300 Roaming National Founder, Okuninushi
+   |   |-> 2282 Placating Founder, Okuninushi
    |   |-> 2985 Awoken Okuninushi
    |   |   |-> 3505 Reincarnated Okuninushi
-   |   |-> 2282 Placating Founder, Okuninushi

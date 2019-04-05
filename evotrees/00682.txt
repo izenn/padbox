@@ -1,7 +1,7 @@
 -> 682 Heavy Metal Dragon
    |-> 683 Dragon Lord Zaerog
+   |   |-> 1215 Maleficent Dragon Lord Zaerog
    |   |-> 1473 Bold Pirate Dragon King, Zaerog
    |   |   |-> 3927 Zero Cutlass & Pirate Dragon King's Coat
    |   |-> 1712 Unyielding Samurai Dragon King, Zaerog
    |   |   |-> 3928 Souls of Chaos - Dragon Katanas
-   |   |-> 1215 Maleficent Dragon Lord Zaerog

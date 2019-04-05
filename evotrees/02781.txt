@@ -1,4 +1,4 @@
 -> 2781 Y'shtola
    |-> 2782 Scion of the Seventh Dawn, Y'shtola
-   |   |-> 3822 Pixel Y'shtola
    |   |-> 3294 Sharlayan Sage, Y'shtola
+   |   |-> 3822 Pixel Y'shtola

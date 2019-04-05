@@ -1,4 +1,4 @@
 -> 2562 Australis
    |-> 2563 Destroying Bow Steel Star God, Australis
-   |   |-> 4052 Guard Bow Steel Star God, Australis
    |   |-> 4051 Pierce Bow Steel Star God, Australis
+   |   |-> 4052 Guard Bow Steel Star God, Australis

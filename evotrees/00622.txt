@@ -1,6 +1,6 @@
 -> 622 Archangel Gabriel
    |-> 623 Water Dominion Gabriel
-   |   |-> 3713 Awoken Gabriel
-   |   |   |-> 4262 Reincarnated Gabriel
    |   |-> 1254 Guiding Archangel, Gabriel
    |   |   |-> 2499 Divinized Archangel, Gabriel
+   |   |-> 3713 Awoken Gabriel
+   |   |   |-> 4262 Reincarnated Gabriel

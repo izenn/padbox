@@ -1,6 +1,6 @@
 -> 624 Archangel Michael
    |-> 625 Wood Dominion Michael
-   |   |-> 3714 Awoken Michael
-   |   |   |-> 4263 Reincarnated Michael
    |   |-> 1255 Unyielding Archangel, Michael
    |   |   |-> 2500 Archangel of Annihilation, Michael
+   |   |-> 3714 Awoken Michael
+   |   |   |-> 4263 Reincarnated Michael

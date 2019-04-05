@@ -1,6 +1,6 @@
 -> 747 Incarnation of Seiryuu, Karin
    |-> 748 Guardian of Life Seiryuu, Karin
    |   |-> 1264 Life Protector Seiryuu, Karin
+   |   |-> 1265 Ethereal Guardian Seiryuu, Karin
    |   |-> 2074 Awoken Karin
    |   |   |-> 3488 Reincarnated Karin
-   |   |-> 1265 Ethereal Guardian Seiryuu, Karin

@@ -1,6 +1,6 @@
 -> 753 Incarnation of Byakko, Haku
    |-> 754 Soul Guardian Byakko, Haku
+   |   |-> 1268 Lunar Corona Byakko, Haku
+   |   |-> 1269 Banishing Claw Byakko, Haku
    |   |-> 2076 Awoken Haku
    |   |   |-> 3491 Reincarnated Haku
-   |   |-> 1269 Banishing Claw Byakko, Haku
-   |   |-> 1268 Lunar Corona Byakko, Haku

@@ -1,6 +1,6 @@
 -> 240 Parvati
    |-> 241 Parvati, the Golden Goddess
-   |   |-> 1956 Awoken Parvati
-   |   |   |-> 3243 Reincarnated Parvati
    |   |-> 1116 White Hot Dancing Goddess, Parvati
    |   |-> 1117 Jade Oracle, Parvati
+   |   |-> 1956 Awoken Parvati
+   |   |   |-> 3243 Reincarnated Parvati

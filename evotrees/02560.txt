@@ -1,4 +1,4 @@
 -> 2560 Hamal
    |-> 2561 Dream Scythe Mechanical Star God, Hamal
-   |   |-> 3591 Dream Shredder Mechanical Star God, Hamal
    |   |-> 3590 Illusion Reaper Mechanical Star God, Hamal
+   |   |-> 3591 Dream Shredder Mechanical Star God, Hamal

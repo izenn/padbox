@@ -1,5 +1,5 @@
 -> 1667 Nephthys
    |-> 1668 Goddess of the Dead, Nephthys
+   |   |-> 2388 Soaring Night Goddess of the Dead, Nephthys
    |   |-> 3455 Night Voyager Death Goddess, Nephthys
    |   |-> 4282 Awoken Nephthys
-   |   |-> 2388 Soaring Night Goddess of the Dead, Nephthys

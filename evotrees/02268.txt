@@ -1,6 +1,6 @@
 -> 2268 Ishida Mitsunari
    |-> 2269 Diligent Spy, Ishida Mitsunari
    |   |-> 3105 Humanistic Spy, Ishida Mitsunari
+   |   |-> 3106 Tyrannical Spy, Ishida Mitsunari
    |   |-> 3842 Awoken Ishida Mitsunari
    |   |   |-> 5042 Reincarnated Ishida Mitsunari
-   |   |-> 3106 Tyrannical Spy, Ishida Mitsunari

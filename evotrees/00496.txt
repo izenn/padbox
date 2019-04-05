@@ -1,6 +1,6 @@
 -> 496 Ra
    |-> 497 Sun Deity Ra
    |   |-> 998 Dark Sun Deity, Ra
+   |   |-> 999 Pure Light Sun Deity, Ra
    |   |-> 2012 Awoken Ra
    |   |   |-> 3273 Reincarnated Ra
-   |   |-> 999 Pure Light Sun Deity, Ra

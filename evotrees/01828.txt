@@ -1,5 +1,5 @@
 -> 1828 Blue Angel, Famiel
    |-> 1829 Blue-Winged Star Angel, Famiel
-   |   |-> 4891 Awoken Famiel
    |   |-> 2494 Patrolling Star Angel, Famiel
    |   |-> 3570 Shooting Star Angel, Famiel
+   |   |-> 4891 Awoken Famiel

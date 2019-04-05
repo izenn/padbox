@@ -1,6 +1,6 @@
 -> 569 Hermes
    |-> 570 Commerce Deity Hermes
    |   |-> 890 Commerce Deity of Dreams, Hermes
+   |   |-> 2236 Psychopomp Commerce Deity, Hermes
    |   |-> 2748 Awoken Hermes
    |   |   |-> 3493 Reincarnated Hermes
-   |   |-> 2236 Psychopomp Commerce Deity, Hermes

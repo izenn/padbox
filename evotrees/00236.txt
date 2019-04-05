@@ -1,6 +1,6 @@
 -> 236 Shiva
    |-> 237 Shiva, the Destroyer
-   |   |-> 1113 Demolishing Creator, Shiva
    |   |-> 1112 Karmic Destroyer, Shiva
+   |   |-> 1113 Demolishing Creator, Shiva
    |   |-> 1954 Awoken Shiva
    |   |   |-> 3241 Reincarnated Shiva

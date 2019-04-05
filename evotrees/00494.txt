@@ -1,7 +1,7 @@
 -> 494 Bastet
    |-> 495 Love Deity, Feline Bastet
    |   |-> 888 Feline Deity of Harmony, Bastet
-   |   |-> 2011 Awoken Bastet
-   |   |   |-> 3384 Reincarnated Bastet
    |   |-> 1613 Moonlit Feline Goddess, Bastet
    |   |   |-> 2929 Bastet Armor X Dragon Caller, Ace
+   |   |-> 2011 Awoken Bastet
+   |   |   |-> 3384 Reincarnated Bastet

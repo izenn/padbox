@@ -1,7 +1,7 @@
 -> 490 Horus
    |-> 491 Flame Deity, Falcon Horus
-   |   |-> 2009 Awoken Horus
-   |   |   |-> 3272 Reincarnated Horus
+   |   |-> 994 Inferno Deity Falcon, Horus
    |   |-> 995 Blazing Deity Falcon, Horus
    |   |   |-> 2927 Horus Armor X Dragon Caller, Ace
-   |   |-> 994 Inferno Deity Falcon, Horus
+   |   |-> 2009 Awoken Horus
+   |   |   |-> 3272 Reincarnated Horus

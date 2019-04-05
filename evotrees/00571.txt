@@ -1,6 +1,6 @@
 -> 571 Artemis
    |-> 572 Hunting Deity Artemis
+   |   |-> 891 Hunt God of the Holy Bow, Artemis
    |   |-> 2237 Moon Flower Huntress, Artemis
    |   |-> 2749 Awoken Artemis
    |   |   |-> 3494 Reincarnated Artemis
-   |   |-> 891 Hunt God of the Holy Bow, Artemis

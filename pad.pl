@@ -401,7 +401,9 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
   } else {
     $latentcell = "old style";
   }
-  if ($typelist =~ m/Evo|Awoken|Enhance/) {
+  if ($typelist =~ m/Redeemable/) {
+    $latentcell = "";
+  } elsif ($typelist =~ m/Evo|Awoken|Enhance/) {
     $latentcell = $decodedbox->{'card'}[$c][1];
   }
   $monsterline .= "<td>$latentcell</td>";
@@ -424,7 +426,7 @@ foreach my $line (@monsterarray) {
     }
   } elsif ( $line =~ m/evo.png/ ) {
     push @mats, $line;
-  } elsif ( $line =~ m/enhange.png/ ) {
+  } elsif ( $line =~ m/enhance.png/ ) {
     push @mats, $line;
   } elsif ( $line =~ m/awoken.png/ ) {
     push @mats, $line;
@@ -447,7 +449,7 @@ $output .= "    </tbody>
 $output .= "<div id='collapseThree' class='panel-collapse collapse'>\n";
 $output .= "  <table id='mats' style='width:100%'>
     <thead>
-      <tr><th>ID</th><th style='display:none'>Main Attr</th><th style='display:none'>Sub Attr</th><th>Name</th><th>Rarity</th><th>Level</th><th>Type</th><th>Evo Tree</th><th>Skill</th><th>Awoken</th><th>Latent/Stacks</th><th>HP</th><th>ATK</th><th>RCV</th><th>MP</th></tr></thead>\n    <tbody>";
+      <tr><th>ID</th><th style='display:none'>Main Attr</th><th style='display:none'>Sub Attr</th><th>Name</th><th>Rarity</th><th>Level</th><th>Type</th><th>Evo Tree</th><th>Skill</th><th>Awoken</th><th>Latent/Count</th><th>HP</th><th>ATK</th><th>RCV</th><th>MP</th></tr></thead>\n    <tbody>";
 
 $output .= join "\n", @mats;
 

@@ -1,6 +1,6 @@
 -> 1338 Durga
    |-> 1339 Demon Slaying Goddess, Durga
-   |   |-> 3596 Awoken Durga
-   |   |   |-> 4273 Reincarnated Durga
    |   |-> 2083 Magic Hand Slayer Goddess, Durga
    |   |   |-> 3072 Smiting Hand Slayer Goddess, Durga
+   |   |-> 3596 Awoken Durga
+   |   |   |-> 4273 Reincarnated Durga

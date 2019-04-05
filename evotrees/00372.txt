@@ -1,6 +1,6 @@
 -> 372 Freyja
    |-> 373 Freyja, the Goddess of Gaia
    |   |-> 654 Freyja, the Fertility Goddess
+   |   |-> 1346 Bountiful Arbor Goddess, Freyja
    |   |-> 2394 Awoken Freyja
    |   |   |-> 3484 Reincarnated Freyja
-   |   |-> 1346 Bountiful Arbor Goddess, Freyja

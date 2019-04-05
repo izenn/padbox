@@ -1,6 +1,6 @@
 -> 628 Archangel Lucifer
    |-> 629 Seraph of Dawn Lucifer
-   |   |-> 3716 Awoken Seraph Lucifer
-   |   |   |-> 4265 Reincarnated Seraph Lucifer
    |   |-> 1216 Rebel Seraph Lucifer
    |   |   |-> 2502 Seraph of Corruption, Lucifer
+   |   |-> 3716 Awoken Seraph Lucifer
+   |   |   |-> 4265 Reincarnated Seraph Lucifer

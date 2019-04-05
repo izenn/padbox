@@ -1,1 +1,4 @@
--> 100406 Alt. Cerberus
+-> 406 Cerberus
+   |-> 407 Cerberus, the Guardian of Hell
+   |   |-> 1214 Underworld Guard Dog, Cerberus
+   |-> 100407 Alt. Cerberus, the Guardian of Hell

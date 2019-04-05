@@ -1,4 +1,4 @@
 -> 1585 Goddess of Secrets, Kali
    |-> 1586 Shining Goddess of Secrets, Kali
-   |   |-> 4055 White Radiance Goddess of Secrets, Kali
    |   |-> 1747 Sparkling Goddess of Secrets, Kali
+   |   |-> 4055 White Radiance Goddess of Secrets, Kali

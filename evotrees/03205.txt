@@ -1,4 +1,4 @@
 -> 3205 Vajrabhairava
    |-> 3206 God of Awe and Fear, Vajrabhairava
-   |   |-> 4256 Awoken Vajrabhairava
    |   |-> 4255 Outbreak God of Awe and Fear, Vajrabhairava
+   |   |-> 4256 Awoken Vajrabhairava

@@ -32,7 +32,7 @@ for (my $i = 1; $i < $count; $i++) {
 
 # Convert each top-level group into a tree of evo...
 for my $group (values %evohash) {
-    for my $card (keys %{$group}) {
+    for my $card (sort {$a <=> $b} keys %{$group}) {
         # What is this card's ancestor_id???
         my $ancestor_id = $group->{$card}{'ancestor'};
         # Nothing to do if card doesn't have a ancestor_id...

@@ -1,4 +1,4 @@
 -> 2141 Scarlet Dragon Caller, Tsubaki
    |-> 2142 Dusk Scarlet Dragon Caller, Tsubaki
-   |   |-> 3260 Yamato Flame Dragon Caller, Tsubaki
    |   |-> 2970 Scarlet Sky Flame Dragon Caller, Tsubaki
+   |   |-> 3260 Yamato Flame Dragon Caller, Tsubaki

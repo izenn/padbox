@@ -1,6 +1,6 @@
 -> 1330 Krishna
    |-> 1331 Divine Brave General, Krishna
-   |   |-> 3592 Awoken Krishna
-   |   |   |-> 4269 Reincarnated Krishna
    |   |-> 2079 Divine General of the Sun, Krishna
    |   |   |-> 3068 Divine General of the Radiant Heaven, Krishna
+   |   |-> 3592 Awoken Krishna
+   |   |   |-> 4269 Reincarnated Krishna

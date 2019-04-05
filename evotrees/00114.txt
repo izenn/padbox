@@ -3,5 +3,5 @@
    |   |-> 326 Red Ice Leviathan
    |   |-> 327 Green Ice Leviathan
    |   |-> 328 Shining Ice Leviathan
-   |   |-> 1095 Water Twin Star Leviathan
    |   |-> 329 Dark Ice Leviathan
+   |   |-> 1095 Water Twin Star Leviathan

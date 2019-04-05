@@ -1,6 +1,6 @@
 -> 244 Vritra
    |-> 245 Darkdragon Vritra
+   |   |-> 658 Evil Darkdragon Vritra
    |   |-> 1927 Abyssal Darkdragon, Vritra
    |   |-> 2980 Awoken Vritra
    |   |   |-> 3450 Reincarnated Vritra
-   |   |-> 658 Evil Darkdragon Vritra

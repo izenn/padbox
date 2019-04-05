@@ -1,5 +1,5 @@
 -> 2266 Mori Motonari
    |-> 2267 Peerless Strategist, Mori Motonari
-   |   |-> 3841 Awoken Mori Motonari
-   |   |-> 3104 Resolute Strategist, Mori Motonari
    |   |-> 3103 Contemplative Strategist, Mori Motonari
+   |   |-> 3104 Resolute Strategist, Mori Motonari
+   |   |-> 3841 Awoken Mori Motonari

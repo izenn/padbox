@@ -1,6 +1,6 @@
 -> 134 Viper Orochi
    |-> 135 Demon Viper Orochi
-   |   |-> 2322 Awoken Viper Orochi
-   |   |   |-> 3386 Reincarnated Viper Orochi
    |   |-> 986 Serpent God Demon, Viper Orochi
    |   |-> 1555 Eight-Headed Dragon God, Viper Orochi
+   |   |-> 2322 Awoken Viper Orochi
+   |   |   |-> 3386 Reincarnated Viper Orochi

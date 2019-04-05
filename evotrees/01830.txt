@@ -1,5 +1,5 @@
 -> 1830 Green Angel, Ruel
    |-> 1831 Green-Winged Star Angel, Ruel
-   |   |-> 4892 Awoken Ruel
    |   |-> 2495 Demon Destroying Star Angel, Ruel
    |   |-> 3571 Spiral Fist Star Angel, Ruel
+   |   |-> 4892 Awoken Ruel

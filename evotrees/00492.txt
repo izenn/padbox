@@ -1,6 +1,6 @@
 -> 492 Isis
    |-> 493 Water Deity, Holy Isis
+   |   |-> 996 Blue Moon Sea Deity, Isis
    |   |-> 997 Shining Sea Deity, Isis
    |   |-> 2010 Awoken Isis
    |   |   |-> 3383 Reincarnated Isis
-   |   |-> 996 Blue Moon Sea Deity, Isis
