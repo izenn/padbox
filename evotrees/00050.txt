@@ -1,0 +1,3 @@
+-> 50 Green Carbuncle
+   |-> 51 Emerald Carbuncle
+   |   |-> 208 Earth Light Carbuncle

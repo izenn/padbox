@@ -1,0 +1,5 @@
+-> 106 Titan
+   |-> 107 Gigas
+   |   |-> 512 Red Giant Gigas
+   |   |   |-> 984 Gigas the Great
+   |   |   |   |-> 3917 Gigas Axe

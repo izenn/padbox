@@ -1,0 +1,4 @@
+-> 64 Blue Ogre
+   |-> 65 Ice Ogre
+   |   |-> 313 Wood Ice Ogre
+   |   |-> 312 Blazing Ice Ogre

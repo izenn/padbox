@@ -1,0 +1,6 @@
+-> 221 Berserk
+   |-> 222 Siegfried, the Blue Champion
+   |   |-> 513 King Siegfried, Blue Champion
+   |   |   |-> 692 Earth-Rending Emperor, Siegfried
+   |   |   |-> 1208 Dragon Emperor, Buster Siegfried
+   |   |   |   |-> 3918 Balmung

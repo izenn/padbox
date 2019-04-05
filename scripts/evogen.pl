@@ -1,0 +1,81 @@
+#!/usr/bin/perl
+use warnings;
+use JSON qw( decode_json );
+use Data::Dumper qw( Dumper );
+binmode STDOUT, ":encoding(UTF-8)";
+
+my $monsterjson;
+
+{
+  local $/=undef;
+  open FILE, "../paddata_processed_na_cards.json" or die "Couldn't open file: $!";
+  $monsterjson = <FILE>;
+  close FILE;
+}
+
+my $decodedmonster = decode_json($monsterjson);
+my $count = keys $decodedmonster;
+
+my %evohash;
+
+for (my $i = 1; $i < $count; $i++) {
+    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'name'} = $decodedmonster->[$i]{'card'}{'name'},
+    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'ancestor'} = $decodedmonster->[$i]{'card'}{'ancestor_id'},
+    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'id'} = $decodedmonster->[$i]{'card'}{'card_id'},
+    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'family'} = $decodedmonster->[$i]{'card'}{'base_id'},
+#    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'evo1'} = $decodedmonster->[$i]{'card'}{'evo_mat_id_1'},
+#    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'evo2'} = $decodedmonster->[$i]{'card'}{'evo_mat_id_2'},
+#    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'evo3'} = $decodedmonster->[$i]{'card'}{'evo_mat_id_3'},
+#    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'evo4'} = $decodedmonster->[$i]{'card'}{'evo_mat_id_4'},
+#    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'evo5'} = $decodedmonster->[$i]{'card'}{'evo_mat_id_5'}
+};
+
+# Convert each top-level group into a tree of evo...
+for my $group (values %evohash) {
+    for my $card (keys %{$group}) {
+        # What is this card's ancestor_id???
+        my $ancestor_id = $group->{$card}{'ancestor'};
+        # Nothing to do if card doesn't have a ancestor_id...
+        next if $ancestor_id == 0;
+
+        # Record that this card is a subordinate of their ancestor_id...
+        push @{$group->{$ancestor_id}{'evo'}}, $group->{$card};
+    }
+}
+
+# Draw each group's org-tree (horizontally), 
+# starting with ancestor_id-less cards...
+for my $group (values %evohash) {
+  my @output;
+  my $family;
+  for my $card (values %{$group}) {
+    # Ignore cards who have a 0 ancestor_id...
+    next if $card->{'ancestor'};
+
+    # Draw the org tree for cards that don't have a ancestor_id...
+    my $out;
+    open SUBOUT, '>', \$out;
+    select SUBOUT;
+      draw_tree($card);
+    select STDOUT;
+    my $paddedfamily = sprintf("%05d", $card->{'family'});
+    open(my $fh, '>', "../evotrees/" . $paddedfamily . ".txt");
+      print $fh $out; 
+    close $fh;
+  }
+}
+
+# Draw each card and their evo tree...
+sub draw_tree {
+  my ($root_node, $level) = @_;
+  $level //= 0;
+
+  # Report the card...
+  print "   |" x $level, "-> ", $root_node->{'id'} . " " .  $root_node->{'name'} . "\n";
+
+  # Recursively report their evo...
+  for my $subordinate (@{$root_node->{'evo'}}) {
+    draw_tree($subordinate, $level+1);
+  }
+}
+

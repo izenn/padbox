@@ -1,0 +1,5 @@
+-> 2415 Antares
+   |-> 2416 Thorned Mechanical Star God, Antares
+   |   |-> 4242 Awoken Antares
+   |   |-> 3053 Sphere Protected Mechanical Star God, Antares
+   |   |-> 3054 Scythe Wielding Mechanical Star God, Antares

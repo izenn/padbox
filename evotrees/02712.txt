@@ -1,0 +1,5 @@
+-> 2712 Baldin
+   |-> 2713 Radiant Blade Mechdragon God, Baldin
+   |   |-> 3371 Scorchblade Mechdragon God, Baldin
+   |   |-> 4745 Mega Awoken Blade Mechdragon, Baldin
+   |   |-> 3370 Hellbrand Mechdragon God, Baldin

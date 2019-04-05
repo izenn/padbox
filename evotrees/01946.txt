@@ -1,0 +1,4 @@
+-> 1946 Red Dragonbound, Gadius
+   |-> 1947 Lightning Red Dragonbound, Gadius
+   |   |-> 3907 Pure Demonic Thunder Dragonbound, Gadius
+   |   |-> 2744 Enthusiast Red Dragonbound, Gadius

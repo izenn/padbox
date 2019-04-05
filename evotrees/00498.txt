@@ -1,0 +1,6 @@
+-> 498 Anubis
+   |-> 499 Hell Deity, Jackal Anubis
+   |   |-> 1001 Deathly Hell Deity Jackal, Anubis
+   |   |-> 1000 Abyssal Hell Deity Jackal, Anubis
+   |   |-> 2013 Awoken Anubis
+   |   |   |-> 3385 Reincarnated Anubis

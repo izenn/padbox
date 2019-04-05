@@ -1,0 +1,5 @@
+-> 2423 Castor
+   |-> 2424 Destruction Palm Mechanical Star God, Castor
+   |   |-> 3062 Destruction Blade Mechanical Star God, Castor
+   |   |-> 3061 Destruction Cannon Mechanical Star God, Castor
+   |   |-> 4246 Awoken Castor

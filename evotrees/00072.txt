@@ -1,0 +1,3 @@
+-> 72 Earth Fighter
+   |-> 73 Earth Knight
+   |   |-> 908 Earth Baron

@@ -1,0 +1,5 @@
+-> 362 Odin
+   |-> 363 Awoken Odin
+   |   |-> 3390 Asgardian Warlock, Odin
+   |   |-> 1423 Shining Lance Wielder, Odin
+   |   |   |-> 3914 Light Spear, Gungnir & Asgard Hat
