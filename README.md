@@ -5,7 +5,7 @@ Roadmap
 =======
 Alpha
 ------
-  * Finish latent binary lookups
+  * ~~Finish latent binary lookups~~
   * ~~evolution trees~~
   * ~~add evo mat count~~
 
@@ -17,7 +17,7 @@ Beta
   * redo tooltips for friend leads
   * add tooltips to box pages?
   * ~~add my teams list~~
-  * badge icons
+  * team badge icons
   * add self data
   * add assists
   * upload utility scripts (~~genevo~~, render, and cuttile)
