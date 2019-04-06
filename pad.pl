@@ -8,16 +8,18 @@ binmode STDOUT, ":encoding(UTF-8)";
 my $boxjson;
 my $monsterjson;
 my $output;
+my $upload = $ARGV[0];
+my $userid = $ARGV[1];
 
-print "importing box json\n";
+#print "importing box json\n";
 {
   local $/=undef;
-  open FILE, "pad.json" or die "Couldn't open file: $!";
+  open FILE, "$upload" or die "Couldn't open file: $!";
   $boxjson = <FILE>;
   close FILE;
 }
 
-print "importing monster json\n";
+#print "importing monster json\n";
 {
   local $/=undef;
   open FILE, "paddata_processed_na_cards.json" or die "Couldn't open file: $!";
@@ -124,7 +126,7 @@ $output .= "\n<div id='collapseOne' class='panel-collapse collapse' data-parent=
 <table style='width: 100%'>
 <tr>";
 
-print "generating friend list\n";
+#print "generating friend list\n";
 my @friendarray;
 push @friendarray, "<td style='width:40%;'>
   <table id='friends'>
@@ -138,12 +140,12 @@ for (my $i = 0; $i < $friendcount; $i++ ) {
   $friendline .= "<td>$decodedbox->{'friends'}[$i][2]</td>";
   $friendline .= "<td>$decodedbox->{'friends'}[$i][3]</td>";
   if ($decodedbox->{'friends'}[$i][14] == 1) {
-    $friendline .= "<td><img class='lozad' data-src='images/cards/card_0" . $decodedbox->{'friends'}[$i][16] . ".png' /></td>";
-    $friendline .= "<td><img class='lozad' data-src='images/cards/card_0" . $decodedbox->{'friends'}[$i][31] . ".png' /></td>";
-    $friendline .= "<td><img class='lozad' data-src='images/cards/card_0" . $decodedbox->{'friends'}[$i][46] . ".png' /></td>";
+    $friendline .= "<td><img class='lozad' data-src='/images/cards/card_0" . $decodedbox->{'friends'}[$i][16] . ".png' /></td>";
+    $friendline .= "<td><img class='lozad' data-src='/images/cards/card_0" . $decodedbox->{'friends'}[$i][31] . ".png' /></td>";
+    $friendline .= "<td><img class='lozad' data-src='/images/cards/card_0" . $decodedbox->{'friends'}[$i][46] . ".png' /></td>";
   } else {
-    $friendline .= "<td><img class='lozad' data-src='images/cards/card_0" . $decodedbox->{'friends'}[$i][16] . ".png' /></td>";
-    $friendline .= "<td><img class='lozad' data-src='images/cards/card_0" . $decodedbox->{'friends'}[$i][31] . ".png' /></td>";
+    $friendline .= "<td><img class='lozad' data-src='/images/cards/card_0" . $decodedbox->{'friends'}[$i][16] . ".png' /></td>";
+    $friendline .= "<td><img class='lozad' data-src='/images/cards/card_0" . $decodedbox->{'friends'}[$i][31] . ".png' /></td>";
     $friendline .= "<td>&nbsp</td>";
   };
   $friendline .= "</tr>";
@@ -154,7 +156,7 @@ push @friendarray, "    </tbody>\n  </table></td>\n";
 $output .= join "\n", @friendarray;
 $output .= "<td style='width:4%'>&nbsp;</td>\n";
 
-print "generating team list\n";
+#print "generating team list\n";
 my @teamarray;
 my $teamcount = scalar(@{$decodedbox->{'decksb'}{'decks'}});
 my $cardcount = scalar(@{$decodedbox->{'card'}});
@@ -176,11 +178,11 @@ for (my $t = 0; $t < $teamcount; $t++) {
       my $cardnum = $decodedbox->{'card'}[$x][5];
       my $framedata;
       if ( $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} > -1 ) {
-        $framedata = "<img class='lozad' data-src='images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
+        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='/images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
       } else {
-        $framedata = "<img class='lozad' data-src='images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
+        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
       };
-        $teamlist[0] = "<td class='card'><img class='lozad' data-src='images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
+        $teamlist[0] = "<td class='card'><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
     }
   }
   for (my $x = 0; $x < $cardcount; $x++) {
@@ -189,11 +191,11 @@ for (my $t = 0; $t < $teamcount; $t++) {
       my $cardnum = $decodedbox->{'card'}[$x][5];
       my $framedata;
       if ( $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} > -1 ) {
-        $framedata = "<img class='lozad' data-src='images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
+        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='/images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
       } else {
-        $framedata = "<img class='lozad' data-src='images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
+        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
       };
-        $teamlist[1] = "<td class='card'><img class='lozad' data-src='images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
+        $teamlist[1] = "<td class='card'><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
     }
   }
   for (my $x = 0; $x < $cardcount; $x++) {
@@ -202,11 +204,11 @@ for (my $t = 0; $t < $teamcount; $t++) {
       my $cardnum = $decodedbox->{'card'}[$x][5];
       my $framedata;
       if ( $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} > -1 ) {
-        $framedata = "<img class='lozad' data-src='images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
+        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='/images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
       } else {
-        $framedata = "<img class='lozad' data-src='images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
+        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
       };
-        $teamlist[2] = "<td class='card'><img class='lozad' data-src='images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
+        $teamlist[2] = "<td class='card'><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
     }
   }
   for (my $x = 0; $x < $cardcount; $x++) {
@@ -215,11 +217,11 @@ for (my $t = 0; $t < $teamcount; $t++) {
       my $cardnum = $decodedbox->{'card'}[$x][5];
       my $framedata;
       if ( $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} > -1 ) {
-        $framedata = "<img class='lozad' data-src='images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
+        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='/images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
       } else {
-        $framedata = "<img class='lozad' data-src='images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
+        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
       };
-        $teamlist[3] = "<td class='card'><img class='lozad' data-src='images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
+        $teamlist[3] = "<td class='card'><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
     }
   }
   for (my $x = 0; $x < $cardcount; $x++) {
@@ -228,11 +230,11 @@ for (my $t = 0; $t < $teamcount; $t++) {
       my $cardnum = $decodedbox->{'card'}[$x][5];
       my $framedata;
       if ( $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} > -1 ) {
-        $framedata = "<img class='lozad' data-src='images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
+        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='/images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
       } else {
-        $framedata = "<img class='lozad' data-src='images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
+        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
       };
-        $teamlist[4] = "<td class='card'><img class='lozad' data-src='images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
+        $teamlist[4] = "<td class='card'><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
     }
   }
   for (my $x = 0; $x < $cardcount; $x++) {
@@ -241,11 +243,11 @@ for (my $t = 0; $t < $teamcount; $t++) {
       my $cardnum = $decodedbox->{'card'}[$x][5];
       my $framedata;
       if ( $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} > -1 ) {
-        $framedata = "<img class='lozad' data-src='images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
+        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='/images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
       } else {
-        $framedata = "<img class='lozad' data-src='images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
+        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
       };
-        $teamlist[5] = "<td class='card'><img class='lozad' data-src='images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
+        $teamlist[5] = "<td class='card'><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
     }
   }
   $teamrow .= join("", @teamlist);
@@ -262,18 +264,18 @@ $output .= join "\n", @teamarray;
 $output .= "</table>
 </div>\n\n";
 
-print "generating box list\n";
+#print "generating box list\n";
 my @monsterarray;
 for (my $c = 0; $c < $cardcount; $c++ ) {
   my $monsterline;
   my $cardnum = sprintf("%05d", $decodedbox->{'card'}[$c][5]);
   my $framedata;
   if ( $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} > -1 ) {
-    $framedata = "<img class='lozad' data-src='images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
+    $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='/images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
   } else {
-    $framedata = "<img class='lozad' data-src='images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
+    $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
   };
-  $monsterline .= "      <tr><td class='card'><a href='http://www.puzzledragonx.com/en/monster.asp?n=$decodedbox->{'card'}[$c][5]'><img class='lozad' data-src='images/cards/card_" . $cardnum . ".png' alt='$cardnum'>$framedata</a></td>";
+  $monsterline .= "      <tr><td class='card'><a href='http://www.puzzledragonx.com/en/monster.asp?n=$decodedbox->{'card'}[$c][5]'><img class='lozad' data-src='/images/cards/card_" . $cardnum . ".png' alt='$cardnum'>$framedata</a></td>";
   $monsterline .= "<td style='display:none'>$decodedmonster->[$cardnum]{'card'}{'attr_id'}</td>";
 
   my $subattr;
@@ -296,18 +298,18 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
     push @types, $decodedmonster->[$cardnum]{'card'}{'type_3_id'};
   };
   for (@types) {
-    s/^0$/<img class='lozad' data-src='images\/badges\/evo.png' alt='Evo'>/;
-    s/^1$/<img class='lozad' data-src='images\/badges\/balanced.png' alt='Balanced'>/;
-    s/^2$/<img class='lozad' data-src='images\/badges\/physical.png' alt='Physical'>/;
-    s/^3$/<img class='lozad' data-src='images\/badges\/healer.png' alt='Healer'>/;
-    s/^4$/<img class='lozad' data-src='images\/badges\/dragon.png' alt='Dragon'>/;
-    s/^5$/<img class='lozad' data-src='images\/badges\/god.png' alt='God'>/;
-    s/^6$/<img class='lozad' data-src='images\/badges\/attacker.png' alt='Attacker'>/;
-    s/^7$/<img class='lozad' data-src='images\/badges\/devil.png' alt='Devil'>/;
-    s/^8$/<img class='lozad' data-src='images\/badges\/machine.png' alt='Machine'>/;
-    s/^12$/<img class='lozad' data-src='images\/badges\/awoken.png' alt='Awoken'>/;
-    s/^14$/<img class='lozad' data-src='images\/badges\/enhance.png' alt='Enhance'>/;
-    s/^15$/<img class='lozad' data-src='images\/badges\/redeemable.png' alt='Redeemable'>/;
+    s/^0$/<img class='lozad' data-src='\/images\/badges\/evo.png' alt='Evo'>/;
+    s/^1$/<img class='lozad' data-src='\/images\/badges\/balanced.png' alt='Balanced'>/;
+    s/^2$/<img class='lozad' data-src='\/images\/badges\/physical.png' alt='Physical'>/;
+    s/^3$/<img class='lozad' data-src='\/images\/badges\/healer.png' alt='Healer'>/;
+    s/^4$/<img class='lozad' data-src='\/images\/badges\/dragon.png' alt='Dragon'>/;
+    s/^5$/<img class='lozad' data-src='\/images\/badges\/god.png' alt='God'>/;
+    s/^6$/<img class='lozad' data-src='\/images\/badges\/attacker.png' alt='Attacker'>/;
+    s/^7$/<img class='lozad' data-src='\/images\/badges\/devil.png' alt='Devil'>/;
+    s/^8$/<img class='lozad' data-src='\/images\/badges\/machine.png' alt='Machine'>/;
+    s/^12$/<img class='lozad' data-src='\/images\/badges\/awoken.png' alt='Awoken'>/;
+    s/^14$/<img class='lozad' data-src='\/images\/badges\/enhance.png' alt='Enhance'>/;
+    s/^15$/<img class='lozad' data-src='\/images\/badges\/redeemable.png' alt='Redeemable'>/;
   }
   my $typelist = join '', @types;
   $monsterline .= "<td class='type'>$typelist</td>";
@@ -317,7 +319,7 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
   $evotree = do { local $/; <$fh> };
   close($fh);
   $evotree =~ s/\>/&gt;/g;
-  $monsterline .= "<td><input type='image' data-toggle='tooltip' data-html='true' data-placement='right' src='images/misc/evobutton.png' title='<pre>" . $evotree . "</pre>'</td>";
+  $monsterline .= "<td><input type='image' data-toggle='tooltip' data-html='true' data-placement='right' src='/images/misc/evobutton.png' title='<pre>" . $evotree . "</pre>'</td>";
   my $skillmax;
   my $skilllevel;
   if ( ! defined $decodedmonster->[$cardnum]{'active_skill'}{'levels'} ) {
@@ -345,92 +347,92 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
       if ( ! defined $latentarray[$l] ) {
         next;
       } elsif ( $latentarray[$l] =~ m/0000010/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/imphp.png' alt='Imp. HP'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/imphp.png' alt='Imp. HP'>";
       } elsif ( $latentarray[$l] =~ m/0000100/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/impatk.png' alt='Imp. ATK'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/impatk.png' alt='Imp. ATK'>";
       } elsif ( $latentarray[$l] =~ m/0000110/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/imprcv.png' alt='Imp. RCV'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/imprcv.png' alt='Imp. RCV'>";
       } elsif ( $latentarray[$l] =~ m/0001010/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/autoheal.png' alt='Auto-Heal'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/autoheal.png' alt='Auto-Heal'>";
       } elsif ( $latentarray[$l] =~ m/0001000/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/exttime.png' alt='Ext. Move Time'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/exttime.png' alt='Ext. Move Time'>";
       } elsif ( $latentarray[$l] =~ m/0001100/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/firedr.png' alt='Fire Dmg. Red.'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/firedr.png' alt='Fire Dmg. Red.'>";
       } elsif ( $latentarray[$l] =~ m/0001110/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/waterdr.png' alt='Water Dmg. Red.'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/waterdr.png' alt='Water Dmg. Red.'>";
       } elsif ( $latentarray[$l] =~ m/0010000/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/wooddr.png' alt='Wood Dmg. Red.'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/wooddr.png' alt='Wood Dmg. Red.'>";
       } elsif ( $latentarray[$l] =~ m/0010010/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/lightdr.png' alt='Light Dmg. Red.'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/lightdr.png' alt='Light Dmg. Red.'>";
       } elsif ( $latentarray[$l] =~ m/0010100/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/darkdr.png' alt='Dark Dmg. Red.'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/darkdr.png' alt='Dark Dmg. Red.'>";
       } elsif ( $latentarray[$l] =~ m/0010110/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/sdr.png' alt='Skill Delay Resist.'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/sdr.png' alt='Skill Delay Resist.'>";
       } elsif ( $latentarray[$l] =~ m/0011000/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/impall.png' alt='Imp. All Stats'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/impall.png' alt='Imp. All Stats'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0101000/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/godkiller.png' alt='God Killer'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/godkiller.png' alt='God Killer'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0101010/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/dragonkiller.png' alt='Dragon Killer'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/dragonkiller.png' alt='Dragon Killer'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/1000000/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/devilkiller.png' alt='Devil Killer'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/devilkiller.png' alt='Devil Killer'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0101110/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/machinekiller.png' alt='Machine Killer'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/machinekiller.png' alt='Machine Killer'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0110000/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/balancedkiller.png' alt='Balanced Killer'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/balancedkiller.png' alt='Balanced Killer'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0110010/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/attackerkiller.png' alt='Attacker Killer'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/attackerkiller.png' alt='Attacker Killer'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0110100/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/physicalkiller.png' alt='Physical Killer'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/physicalkiller.png' alt='Physical Killer'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0110110/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/healerkiller.png' alt='Healer Killer'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/healerkiller.png' alt='Healer Killer'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0111000/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/imphpplus.png' alt='Imp. HP+'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/imphpplus.png' alt='Imp. HP+'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0111010/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/impatkplus.png' alt='Imp. ATK+'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/impatkplus.png' alt='Imp. ATK+'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0111100/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/imprcvplus.png' alt='Imp. RCV+'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/imprcvplus.png' alt='Imp. RCV+'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0111110/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/exttimeplus.png' alt='Ext. Move Time+'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/exttimeplus.png' alt='Ext. Move Time+'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0100000/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/evokiller.png' alt='Evo Material Killer'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/evokiller.png' alt='Evo Material Killer'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0100010/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/awokenkiller.png' alt='Awoken Material Killer'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/awokenkiller.png' alt='Awoken Material Killer'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0100100/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/enhancedkiller.png' alt='Enhanced Material Killer'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/enhancedkiller.png' alt='Enhanced Material Killer'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0100110/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/redeemablekiller.png' alt='Redeemable Material Killer'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/redeemablekiller.png' alt='Redeemable Material Killer'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/0101100/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/firedrplus.png' alt='Fire Dmg. Red.+'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/firedrplus.png' alt='Fire Dmg. Red.+'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/1000010/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/waterdrplus.png' alt='Water Dmg. Red.+'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/waterdrplus.png' alt='Water Dmg. Red.+'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/1000100/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/wooddrplus.png' alt='Wood Dmg. Red.+'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/wooddrplus.png' alt='Wood Dmg. Red.+'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/1000110/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/lightdrplus.png' alt='Light Dmg. Red.+'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/lightdrplus.png' alt='Light Dmg. Red.+'>";
         splice @latentarray, $l+1, 1;
       } elsif ( $latentarray[$l] =~ m/1001000/ ) {
-        $latentarray[$l] = "<img class='lozad' data-src='images/latents/darkdrplus.png' alt='Dark Dmg. Red.+'>";
+        $latentarray[$l] = "<img class='lozad' data-src='/images/latents/darkdrplus.png' alt='Dark Dmg. Red.+'>";
         splice @latentarray, $l+1, 1;
       }
     }
@@ -563,7 +565,7 @@ observer.observe();
 </body>
 </html>';
 
-print "writing to file\n";
-open (my $fh, '>', "docs/index.html");
+#print "writing to file\n";
+open (my $fh, '>', "box/$userid.html");
   print $fh $output;
 close $fh;
