@@ -23,7 +23,7 @@ Beta
   * upload utility scripts (~~genevo~~, render, and cuttile)
   * document how to get json
   * document how to mine assets
-  * ~~lazy image loading~~~
+  * ~~lazy image loading~~
   * angular
 
 Thanks
