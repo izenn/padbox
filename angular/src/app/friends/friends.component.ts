@@ -56,15 +56,21 @@ export class FriendsComponent implements OnInit {
 function parseFriendData(): UserData[] {
   const friendsData: UserData[] = [];
   for(let friend of padJson.friends) {
-    console.log(friend);
-    friendsData.push({
+    const newFriend = {
       id: friend[1].toString(),
       name: friend[2].toString(),
       level: friend[3].toString(),
       active: "",
       slot1: "",
       slot2: ""
-    });
+    };
+    const baseUrl = "https://raw.githubusercontent.com/izenn/padbox/master/images/cards/";
+    newFriend.active = `${baseUrl}card_0${friend[16]}.png`;
+    newFriend.slot1 = `${baseUrl}card_0${friend[31]}.png`;
+    if(friend[14] === 1) {
+      newFriend.slot2 = `${baseUrl}card_0${friend[46]}.png`;
+    } 
+    friendsData.push(newFriend);
   };
 
   return friendsData;
