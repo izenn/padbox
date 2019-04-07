@@ -1,0 +1,72 @@
+<mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="team">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Team </th>
+        <td mat-cell *matCellDef="let row"> {{row.number}} </td>
+      </ng-container>
+  
+      <!-- Badge Column -->
+      <ng-container matColumnDef="badge">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Badge </th>
+        <td mat-cell *matCellDef="let row"> {{row.badge}} </td>
+      </ng-container>
+  
+      <!-- Leader Column -->
+      <ng-container matColumnDef="leader">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Leader </th>
+        <td mat-cell *matCellDef="let row">
+          <img *ngIf="row.leader" src="{{row.leader.src}}">
+        </td>
+      </ng-container>
+
+      <!-- Sub 1 Column -->
+      <ng-container matColumnDef="sub1">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Sub 1 </th>
+          <td mat-cell *matCellDef="let row">
+            <img *ngIf="row.sub1" src="{{row.sub1.src}}">
+          </td>
+        </ng-container>
+
+        <!-- Sub 2 Column -->
+      <ng-container matColumnDef="sub2">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Sub 2 </th>
+          <td mat-cell *matCellDef="let row">
+            <img *ngIf="row.sub2" src="{{row.sub2.src}}">
+          </td>
+        </ng-container>
+
+        <!-- Sub 3 Column -->
+      <ng-container matColumnDef="sub3">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Sub 3 </th>
+          <td mat-cell *matCellDef="let row">
+            <img *ngIf="row.sub3" src="{{row.sub3.src}}">
+          </td>
+        </ng-container>
+
+        <!-- Sub 4 Column -->
+      <ng-container matColumnDef="sub4">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Sub 4 </th>
+          <td mat-cell *matCellDef="let row">
+            <img *ngIf="row.sub4" src="{{row.sub4.src}}">
+          </td>
+        </ng-container>
+
+        <!-- Helper Column -->
+      <ng-container matColumnDef="helper">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Helper </th>
+          <td mat-cell *matCellDef="let row">
+            <img *ngIf="row.helper" src="{{row.helper.src}}">
+          </td>
+        </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      </tr>
+    </table>
+  </div>

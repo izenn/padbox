@@ -1,19 +1,21 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
+export interface CardImg {
+  frame: string,
+  sub: string,
+  src: string,
+  name: string
+}
+
 export interface UserData {
   id: string;
   name: string;
   level: string,
   active: string,
   slot1: string,
-  slot2: string,
+  slot2: string
 }
-
-/** Constants used to fill up our data base. */
-const NAMES: string[] = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
-  'Charlotte', 'Theodore', 'Isla', 'Oliver', 'Isabella', 'Jasper',
-  'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'];
 
 import * as padJson from '../../assets/pad.json';
 console.log(padJson);

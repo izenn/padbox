@@ -13,13 +13,15 @@ import { AppComponent } from './app.component';
 import { FriendsComponent } from './friends/friends.component';
 import { RemPlusComponent } from './rem-plus/rem-plus.component';
 import { MatsComponent } from './mats/mats.component';
+import { TeamsComponent } from './teams/teams.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FriendsComponent,
     RemPlusComponent,
-    MatsComponent
+    MatsComponent,
+    TeamsComponent
   ],
   imports: [
     BrowserModule, // This needs to be first.
