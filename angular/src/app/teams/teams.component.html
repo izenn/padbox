@@ -3,23 +3,23 @@
   </mat-form-field>
   
   <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" matSort>
+    <table mat-table [dataSource]="dataSource">
   
       <!-- ID Column -->
       <ng-container matColumnDef="team">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Team </th>
+        <th mat-header-cell *matHeaderCellDef> Team </th>
         <td mat-cell *matCellDef="let row"> {{row.number}} </td>
       </ng-container>
   
       <!-- Badge Column -->
       <ng-container matColumnDef="badge">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Badge </th>
+        <th mat-header-cell *matHeaderCellDef> Badge </th>
         <td mat-cell *matCellDef="let row"> {{row.badge}} </td>
       </ng-container>
   
       <!-- Leader Column -->
       <ng-container matColumnDef="leader">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Leader </th>
+        <th mat-header-cell *matHeaderCellDef> Leader </th>
         <td mat-cell *matCellDef="let row">
           <img *ngIf="row.leader" src="{{row.leader.src}}">
         </td>
@@ -27,7 +27,7 @@
 
       <!-- Sub 1 Column -->
       <ng-container matColumnDef="sub1">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Sub 1 </th>
+          <th mat-header-cell *matHeaderCellDef> Sub 1 </th>
           <td mat-cell *matCellDef="let row">
             <img *ngIf="row.sub1" src="{{row.sub1.src}}">
           </td>
@@ -35,7 +35,7 @@
 
         <!-- Sub 2 Column -->
       <ng-container matColumnDef="sub2">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Sub 2 </th>
+          <th mat-header-cell *matHeaderCellDef> Sub 2 </th>
           <td mat-cell *matCellDef="let row">
             <img *ngIf="row.sub2" src="{{row.sub2.src}}">
           </td>
@@ -43,7 +43,7 @@
 
         <!-- Sub 3 Column -->
       <ng-container matColumnDef="sub3">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Sub 3 </th>
+          <th mat-header-cell *matHeaderCellDef> Sub 3 </th>
           <td mat-cell *matCellDef="let row">
             <img *ngIf="row.sub3" src="{{row.sub3.src}}">
           </td>
@@ -51,7 +51,7 @@
 
         <!-- Sub 4 Column -->
       <ng-container matColumnDef="sub4">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Sub 4 </th>
+          <th mat-header-cell *matHeaderCellDef> Sub 4 </th>
           <td mat-cell *matCellDef="let row">
             <img *ngIf="row.sub4" src="{{row.sub4.src}}">
           </td>
@@ -59,7 +59,7 @@
 
         <!-- Helper Column -->
       <ng-container matColumnDef="helper">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Helper </th>
+          <th mat-header-cell *matHeaderCellDef> Helper </th>
           <td mat-cell *matCellDef="let row">
             <img *ngIf="row.helper" src="{{row.helper.src}}">
           </td>

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSort, MatTableDataSource } from '@angular/material';
+import { MatTableDataSource } from '@angular/material';
 
 export interface CardImg {
   frame: string,
@@ -35,8 +35,6 @@ export class TeamsComponent implements OnInit {
   displayedColumns: string[] = ['team', 'leader', 'sub1', 'sub2', 'sub3', 'sub4', 'helper', 'badge'];
   dataSource: MatTableDataSource<TeamData>;
 
-  @ViewChild(MatSort) sort: MatSort;
-
   constructor() {
     const teams = parseTeamData();
 
@@ -44,9 +42,7 @@ export class TeamsComponent implements OnInit {
     this.dataSource = new MatTableDataSource(teams);
   }
 
-  ngOnInit() {
-    this.dataSource.sort = this.sort;
-  }
+  ngOnInit() {}
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
