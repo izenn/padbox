@@ -3,33 +3,40 @@ const app = express();
 const port = process.env.PORT || 3000;
 const fs = require('fs');
 const StreamArray = require('stream-json/streamers/StreamArray');
+const {Datastore} = require('@google-cloud/datastore');
 
-function getCardById(id) {
-  let resolver;
-  const promise = new Promise((res, rej) => {
-    resolver = res;
-  });
-  const pipeline = fs.createReadStream('paddata_processed_na_cards.json').pipe(StreamArray.withParser());
-  let ret = null;
-  pipeline.on('data', data => {
-    if(data.value.card.card_id === id){
-      ret = data.value;
-    }
-  });
-  pipeline.on('end', () => {
-    resolver(ret);
-  })
-  return promise;
-}
+const datastore = new Datastore();
 
 app.get('/', (req, res) => {
   res.send('API List:\nGET /cards/:cardId');
 });
 
 app.get('/cards/:cardId', (req, res) => {
-  getCardById(Number.parseInt(req.params.cardId)).then(cardData => {
-    res.send(cardData);
-  })
+  const query = datastore.createQuery('card').filter("card.card_id", Number.parseInt(req.params.cardId)).limit(1);
+  datastore.runQuery(query, (err, entities) => {
+    if(err) {
+      res.send(err);
+    } else { 
+      res.send(entities);
+    }
+  });
+});
+
+app.get('/import', (req, res) => {
+  const pipeline = fs.createReadStream('paddata_processed_na_cards.json').pipe(StreamArray.withParser());
+  pipeline.on('data', data => {
+    if(data.value) {
+      datastore.save({
+        key: datastore.key(["card"]),
+        data: data.value
+      }).catch(err => {
+        console.error(`Insert error: ${err}`)
+      });
+    }
+  });
+  pipeline.on('end', () => {
+    res.send("All data imported");
+  });
 });
 
 app.listen(port, () => console.log(`Card Service listening on port ${port}!`));
