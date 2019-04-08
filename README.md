@@ -25,6 +25,7 @@ Beta
   * document how to mine assets
   * ~~lazy image loading~~
   * angular - in process, see angular-ui branch
+  * API for pad_proxy
 
 Thanks
 ------
