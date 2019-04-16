@@ -445,6 +445,8 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
   }
   if ($typelist =~ m/Redeemable/) {
     $latentcell = "";
+  } elsif ($decodedmonster->[$cardnum]{'card'}{'name'} =~ m/Moltdra|Pengdra/) {
+    $latentcell = "";
   } elsif ($typelist =~ m/Evo|Awoken|Enhance/) {
     $latentcell = $decodedbox->{'card'}[$c][1];
   }
