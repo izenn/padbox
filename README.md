@@ -24,7 +24,8 @@ Beta
   * document how to get json
   * document how to mine assets
   * ~~lazy image loading~~
-  * angular
+  * angular - in process, see angular-ui branch
+  * API for pad_proxy
 
 Thanks
 ------
