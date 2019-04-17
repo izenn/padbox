@@ -112,6 +112,13 @@ button:hover {
   width: 100px;
 }
 
+table#mats th:nth-child(9) {display: none;}
+table#mats td:nth-child(9) {display: none;}
+table#mats th:nth-child(10) {display: none;}
+table#mats td:nth-child(10) {display: none;}
+table#mats th:nth-child(11) {display: none;}
+table#mats td:nth-child(11) {display: none;}
+
 </style>
 </head>
 <body>
@@ -334,7 +341,22 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
   };
   $monsterline .= "<td>$skilllevel/$skillmax</td>";
   my $awakenings = scalar(@{$decodedmonster->[$cardnum]{'card'}{'awakenings'}});
-  $monsterline .= "<td>$decodedbox->{'card'}[$c][9]/$awakenings</td>";
+  my $awokenskills;
+  if ( $awakenings > 0 ) {
+    foreach my $askill (@{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}) {
+      $awokenskills .= "<img src='/images/awakenings/" . $askill . ".png' alt='" . $askill . "'>";
+    }
+    $monsterline .= "<td>$awokenskills</td>";
+  } else {
+    $monsterline .= "<td>&nbsp;</td>";
+  }
+#  $monsterline .= "<td>$decodedbox->{'card'}[$c][9]/$awakenings</td>";
+#super
+  if ($decodedbox->{'card'}[$c][13] > 0 ) {
+    $monsterline .= "<td><img src='/images/awakenings/" . $decodedbox->{'card'}[$c][13] . ".png' alt='" . $decodedbox->{'card'}[$c][13] . "'></td>";
+  } else {
+    $monsterline .= "<td>&nbsp;</td>";
+  }
   my $latents = sprintf("%049b", $decodedbox->{'card'}[$c][10]);
   my $latentcell;
   if ( $latents =~ m/1111$/ ) {
@@ -462,18 +484,20 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
 my @mats;
 my @remplus;
 foreach my $line (@monsterarray) {
-  if ($line =~ m/<td>[0-9]{1,2}<\/td><\/tr>/ ) {
-    if ($line =~ m/<td>(1[01][0-9]|99)<\/td><td class='type'/) {
-      push @remplus, $line;
-    } else {
-      push @mats, $line;
-    }
-  } elsif ( $line =~ m/evo.png/ ) {
+  if ( $line =~ m/evo.png/ ) {
     push @mats, $line;
   } elsif ( $line =~ m/enhance.png/ ) {
     push @mats, $line;
   } elsif ( $line =~ m/awoken.png/ ) {
     push @mats, $line;
+  } elsif ( $line =~ m/redeemable.png/ ) {
+    push @mats, $line;
+  } elsif ($line =~ m/<td>[0-9]{1,2}<\/td><\/tr>/ ) {
+    if ($line =~ m/<td>(1[01][0-9]|99)<\/td><td class='type'/) {
+      push @remplus, $line;
+    } else {
+      push @mats, $line;
+    }
   } else {
     push @remplus, $line;
   };
@@ -482,7 +506,7 @@ foreach my $line (@monsterarray) {
 $output .= "<div id='collapseTwo' class='panel-collapse collapse' data-parent='#buttonGroup'>\n";
 $output .= "  <table id='box' style='width:100%'>
     <thead>
-      <tr><th>ID</th><th style='display:none'>Main Attr</th><th style='display:none'>Sub Attr</th><th>Name</th><th>Rarity</th><th>Level</th><th>Type</th><th>Evo Tree</th><th>Skill</th><th>Awoken</th><th>Latent</th><th>HP</th><th>ATK</th><th>RCV</th><th>MP</th></tr></thead>\n    <tbody>";
+      <tr><th>ID</th><th style='display:none'>Main Attr</th><th style='display:none'>Sub Attr</th><th>Name</th><th>Rarity</th><th>Level</th><th>Type</th><th>Evo Tree</th><th>Skill</th><th>Awoken</th><th>Super</th><th>Latent</th><th>HP</th><th>ATK</th><th>RCV</th><th>MP</th></tr></thead>\n    <tbody>";
 
 $output .= join "\n", @remplus;
 
@@ -493,7 +517,7 @@ $output .= "    </tbody>
 $output .= "<div id='collapseThree' class='panel-collapse collapse' data-parent='#buttonGroup'>\n";
 $output .= "  <table id='mats' style='width:100%'>
     <thead>
-      <tr><th>ID</th><th style='display:none'>Main Attr</th><th style='display:none'>Sub Attr</th><th>Name</th><th>Rarity</th><th>Level</th><th>Type</th><th>Evo Tree</th><th>Skill</th><th>Awoken</th><th>Latent/Count</th><th>HP</th><th>ATK</th><th>RCV</th><th>MP</th></tr></thead>\n    <tbody>";
+      <tr><th>ID</th><th style='display:none'>Main Attr</th><th style='display:none'>Sub Attr</th><th>Name</th><th>Rarity</th><th>Level</th><th>Type</th><th>Evo Tree</th><th>Skill</th><th>Awoken</th><th>Super</th><th>Count</th><th>HP</th><th>ATK</th><th>RCV</th><th>MP</th></tr></thead>\n    <tbody>";
 
 $output .= join "\n", @mats;
 
