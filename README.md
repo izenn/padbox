@@ -11,8 +11,8 @@ Alpha
 
 Beta
 ----
-  * awakening lists/images
-  * super awakenings
+  * ~~awakening lists/images~~
+  * ~~super awakenings~~
   * ~~overhaul friend page~~
   * redo tooltips for friend leads
   * add tooltips to box pages?
