@@ -341,19 +341,25 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
   };
   $monsterline .= "<td>$skilllevel/$skillmax</td>";
   my $awakenings = scalar(@{$decodedmonster->[$cardnum]{'card'}{'awakenings'}});
+  my $awoken = $decodedbox->{'card'}[$c][9];
+  if ( $awoken > $awakenings ) { 
+    $awoken = $awakenings;
+  }
   my $awokenskills;
   if ( $awakenings > 0 ) {
-    foreach my $askill (@{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}) {
-      $awokenskills .= "<img src='/images/awakenings/" . $askill . ".png' alt='" . $askill . "'>";
+    for ( my $a = 0; $a < $awakenings; $a++ ) {
+      if ( $a < $awoken ) {
+        $awokenskills .= "<img class='lozad' data-src='/images/awakenings/" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . ".png' alt='" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . "'>";
+      } else {
+        $awokenskills .= "<img class='lozad' data-src='/images/awakenings/unawoken/" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . ".png' alt='" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . "'>";
+      }
     }
     $monsterline .= "<td>$awokenskills</td>";
   } else {
     $monsterline .= "<td>&nbsp;</td>";
   }
-#  $monsterline .= "<td>$decodedbox->{'card'}[$c][9]/$awakenings</td>";
-#super
   if ($decodedbox->{'card'}[$c][13] > 0 ) {
-    $monsterline .= "<td><img src='/images/awakenings/" . $decodedbox->{'card'}[$c][13] . ".png' alt='" . $decodedbox->{'card'}[$c][13] . "'></td>";
+    $monsterline .= "<td><img class='lozad' data-src='/images/awakenings/" . $decodedbox->{'card'}[$c][13] . ".png' alt='" . $decodedbox->{'card'}[$c][13] . "'></td>";
   } else {
     $monsterline .= "<td>&nbsp;</td>";
   }
