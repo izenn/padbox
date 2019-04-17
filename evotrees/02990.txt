@@ -2,3 +2,4 @@
    |-> 2991 Confusing Face Great Duke of Hell, Dantalion
    |   |-> 4071 Great Mocking Mask Duke of Hell, Dantalion
    |   |-> 4072 Great Maskless Duke of Hell, Dantalion
+   |   |-> 5137 Mega Awoken Great Duke of Hell, Dantalion

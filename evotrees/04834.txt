@@ -1,2 +1,3 @@
    4834 Chosen War Goddess, Valkyrie - Ciel
    |-> 4835 White Swan War Goddess, Valkyrie - Ciel
+   |   |-> 5147 Holy Sword - Divine Swan

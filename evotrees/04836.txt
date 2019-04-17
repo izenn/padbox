@@ -1,2 +1,3 @@
    4836 Raging Thunder Almighty God, Zeus - Giga
    |-> 4837 Heavenly Sky Almighty God, Zeus - Giga
+   |   |-> 5148 Thunderbolt Lance Keraunós & Holy Adamant Sickle

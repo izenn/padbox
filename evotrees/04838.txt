@@ -1,2 +1,3 @@
    4838 Guardian of the City of Gods, Athena - Non
    |-> 4839 Guardian of the Holy Grounds, Athena - Non
+   |   |-> 5149 Nike's Divine Spear & Aegis Shield

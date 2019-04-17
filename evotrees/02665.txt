@@ -1,2 +1,3 @@
    2665 Silk
    |-> 2666 Scarlet Jewel Princess, Silk
+   |   |-> 5142 Silk's Ornament

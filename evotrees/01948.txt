@@ -3,3 +3,4 @@
    |   |-> 2745 Chaotic Black Dragonbound, Typhon
    |   |   |-> 3090 Typhon Armor X Dragon Caller, Ana
    |   |-> 3908 Catastrophic Thunder Dragonbound, Typhon
+   |   |-> 5140 Mega Awoken Black Dragonbound, Typhon
