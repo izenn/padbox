@@ -14,6 +14,7 @@ Beta
   * ~~awakening lists/images~~
   * ~~super awakenings~~
   * ~~overhaul friend page~~
+  * ~~sticky headers~~
   * redo tooltips for friend leads
   * add tooltips to box pages?
   * ~~add my teams list~~
