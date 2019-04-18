@@ -37,14 +37,15 @@ $output = '<!DOCTYPE html>
 <head>
 <meta charset="utf-8"/>
  <!-- CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/fh-3.1.4/datatables.min.css"/>
+
 
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <!-- dataTables -->
-<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js "></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/fh-3.1.4/datatables.min.js"></script>
 
 <!-- Bootstrap -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
@@ -153,7 +154,7 @@ for (my $i = 0; $i < $friendcount; $i++ ) {
   } else {
     $friendline .= "<td><img class='lozad' data-src='/images/cards/card_0" . $decodedbox->{'friends'}[$i][16] . ".png' /></td>";
     $friendline .= "<td><img class='lozad' data-src='/images/cards/card_0" . $decodedbox->{'friends'}[$i][31] . ".png' /></td>";
-    $friendline .= "<td>&nbsp</td>";
+    $friendline .= "<td>&nbsp;</td>";
   };
   $friendline .= "</tr>";
   push @friendarray, $friendline;
@@ -523,7 +524,7 @@ $output .= "    </tbody>
 $output .= "<div id='collapseThree' class='panel-collapse collapse' data-parent='#buttonGroup'>\n";
 $output .= "  <table id='mats' style='width:100%'>
     <thead>
-      <tr><th>ID</th><th style='display:none'>Main Attr</th><th style='display:none'>Sub Attr</th><th>Name</th><th>Rarity</th><th>Level</th><th>Type</th><th>Evo Tree</th><th>Skill</th><th>Awoken</th><th>Super</th><th>Count</th><th>HP</th><th>ATK</th><th>RCV</th><th>MP</th></tr></thead>\n    <tbody>";
+      <tr><th>ID</th><th style='display:none'>Main Attr</th><th style='display:none'>Sub Attr</th><th>Name</th><th>Rarity</th><th>Level</th><th>Type</th><th>Evo Tree</th><th style='display:none'>Skill</th><th style='display:none'>Awoken</th><th style='display:none'>Super</th><th>Count</th><th>HP</th><th>ATK</th><th>RCV</th><th>MP</th></tr></thead>\n    <tbody>";
 
 $output .= join "\n", @mats;
 
@@ -539,24 +540,40 @@ $(function () {
 })
 
 $(document).ready(function() {
-  $(\'#friends\').DataTable( {
+  var friends = $(\'#friends\').DataTable( {
     "paging": false ,
     order: [[ 5, \'asc\' ], [ 2, \'desc\' ]]
   } );
-  $(\'#teams\').DataTable( {
+  new $.fn.dataTable.FixedHeader( friends );
+
+  var teams = $(\'#teams\').DataTable( {
     "paging": false ,
     "ordering": false
   } );
-  $(\'#box\').DataTable( {
+  new $.fn.dataTable.FixedHeader( teams );
+
+  var box = $(\'#box\').DataTable( {
+    "paging": false ,
+        fixedColumns: true,
+    columnDefs: [ { type: \'alt-string\', targets: 0 } ],
+    order: [[ 1, \'asc\' ], [ 4, \'desc\' ], [ 2, \'asc\' ], [ 0, \'desc\' ]]
+  });
+  new $.fn.dataTable.FixedHeader( box );
+
+  var mats = $(\'#mats\').DataTable( {
     "paging": false ,
     columnDefs: [ { type: \'alt-string\', targets: 0 } ],
     order: [[ 1, \'asc\' ], [ 4, \'desc\' ], [ 2, \'asc\' ], [ 0, \'desc\' ]]
   } );
-  $(\'#mats\').DataTable( {
-    "paging": false ,
-    columnDefs: [ { type: \'alt-string\', targets: 0 } ],
-    order: [[ 1, \'asc\' ], [ 4, \'desc\' ], [ 2, \'asc\' ], [ 0, \'desc\' ]]
-  } );
+  new $.fn.dataTable.FixedHeader( mats );
+
+  $(".collapse").on(\'shown.bs.collapse\', function(){
+    box.fixedHeader.adjust();
+    mats.fixedHeader.adjust();
+    friends.fixedHeader.adjust();
+    teams.fixedHeader.adjust();
+  });
+
 } );
 
 // When the user scrolls down 20px from the top of the document, show the button
