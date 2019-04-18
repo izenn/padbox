@@ -542,12 +542,14 @@ $(function () {
 $(document).ready(function() {
   var friends = $(\'#friends\').DataTable( {
     "paging": false ,
+    "searching": false ,
     order: [[ 5, \'asc\' ], [ 2, \'desc\' ]]
   } );
   new $.fn.dataTable.FixedHeader( friends );
 
   var teams = $(\'#teams\').DataTable( {
     "paging": false ,
+    "searching": false ,
     "ordering": false
   } );
   new $.fn.dataTable.FixedHeader( teams );
