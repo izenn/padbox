@@ -3,7 +3,7 @@ Succesor to padherder
 
 Roadmap
 =======
-Alpha
+~~Alpha~~
 ------
   * ~~Finish latent binary lookups~~
   * ~~evolution trees~~
@@ -21,7 +21,7 @@ Beta
   * team badge icons
   * add self data
   * add assists
-  * upload utility scripts (~~genevo~~, render, and cuttile)
+  * upload utility scripts (~~genevo~~, render, and cardcut)
   * document how to get json
   * document how to mine assets
   * ~~lazy image loading~~
