@@ -21,12 +21,12 @@ Beta
   * team badge icons
   * add self data
   * add assists
-  * upload utility scripts (~~genevo~~, render, and cardcut)
+  * ~~upload utility scripts (genevo, render, and cardcut)~~
   * document how to get json
   * document how to mine assets
   * ~~lazy image loading~~
-  * angular - in process, see angular-ui branch
-  * API for pad_proxy
+  * Framework?  angular? see angular-ui branch
+  * API for pad_proxy?
 
 Thanks
 ------
