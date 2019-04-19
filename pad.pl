@@ -259,7 +259,7 @@ for (my $t = 0; $t < $teamcount; $t++) {
     }
   }
   $teamrow .= join("", @teamlist);
-  $teamrow .= "<td>" . $decodedbox->{'decksb'}{'decks'}[$t][5] . "</td>";
+  $teamrow .= "<td><img class='lozad' data-src='/images/team/" . $decodedbox->{'decksb'}{'decks'}[$t][5] . ".png'></td>";
   $teamrow .= "</tr>";
   push @teamarray, $teamrow; 
 };

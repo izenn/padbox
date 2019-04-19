@@ -18,7 +18,7 @@ Beta
   * redo tooltips for friend leads
   * add tooltips to box pages?
   * ~~add my teams list~~
-  * team badge icons
+  * ~~team badge icons~~
   * add self data
   * add assists
   * ~~upload utility scripts (genevo, render, and cardcut)~~
