@@ -1,24 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
-
-export interface CardImg {
-  frame: string,
-  sub: string,
-  src: string,
-  name: string
-}
-
-export interface UserData {
-  id: string;
-  name: string;
-  level: string,
-  active: string,
-  slot1: string,
-  slot2: string
-}
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { CardImg, UserData } from '../../utils/utils';
 
 import * as padJson from '../../assets/pad.json';
-console.log(padJson);
 
 @Component({
   selector: 'app-friends',

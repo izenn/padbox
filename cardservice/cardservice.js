@@ -7,6 +7,12 @@ const {Datastore} = require('@google-cloud/datastore');
 
 const datastore = new Datastore();
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.get('/', (req, res) => {
   res.send('API List:\nGET /cards/:cardId');
 });
@@ -17,7 +23,7 @@ app.get('/cards/:cardId', (req, res) => {
     if(err) {
       res.send(err);
     } else { 
-      res.send(entities);
+      res.json(entities);
     }
   });
 });

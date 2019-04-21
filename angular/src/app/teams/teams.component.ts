@@ -1,23 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
-
-export interface CardImg {
-  frame: string,
-  sub: string,
-  src: string,
-  name: string
-}
-
-export interface TeamData {
-  number: string,
-  leader: CardImg,
-  sub1: CardImg,
-  sub2: CardImg,
-  sub3: CardImg,
-  sub4: CardImg,
-  helper: CardImg,
-  badge: string
-}
+import { CardImg, TeamData } from '../../utils/utils';
 
 import * as padJson from '../../assets/pad.json';
 const mappedCards = {}; 

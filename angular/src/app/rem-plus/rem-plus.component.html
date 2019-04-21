@@ -1,3 +1,98 @@
-<p>
-  rem-plus works!
-</p>
+<!-- <mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field> -->
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+
+    <!-- Img Column -->
+    <ng-container matColumnDef="img">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <img *ngIf="row.id" src="{{row.img}}">
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let row">{{row.name}}</td>
+    </ng-container>
+
+    <!-- Rarity Column -->
+    <ng-container matColumnDef="rarity">
+      <th mat-header-cell *matHeaderCellDef>Rarity</th>
+      <td mat-cell *matCellDef="let row">{{row.rarity}}</td>
+    </ng-container>
+
+    <!-- Level Column -->
+    <ng-container matColumnDef="level">
+      <th mat-header-cell *matHeaderCellDef>Level</th>
+      <td mat-cell *matCellDef="let row">{{row.level}}</td>
+    </ng-container>
+
+    <!-- Type Column -->
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef>Type</th>
+      <td mat-cell *matCellDef="let row">
+        <img *ngFor="let type of row.type" src="{{type}}">
+      </td>
+    </ng-container>
+
+    <!-- Evo Tree Column -->
+    <ng-container matColumnDef="evo">
+      <th mat-header-cell *matHeaderCellDef>Evo Tree</th>
+      <td mat-cell *matCellDef="let row">
+        <img *ngIf="row.evo" title="{{row.evo}}" src="https://raw.githubusercontent.com/izenn/padbox/master/images/misc/evobutton.png">
+      </td>
+    </ng-container>
+
+    <!-- Skill Column -->
+    <ng-container matColumnDef="skill">
+      <th mat-header-cell *matHeaderCellDef>Skill</th>
+      <td mat-cell *matCellDef="let row">{{row.skillLevel}}/{{row.skillMax}}</td>
+    </ng-container>
+
+    <!-- Awoken Column -->
+    <ng-container matColumnDef="awoken">
+      <th mat-header-cell *matHeaderCellDef>Awoken</th>
+      <td mat-cell *matCellDef="let row">{{row.awokenLevel}}/{{row.awokenMax}}</td>
+    </ng-container>
+
+    <!-- Latent Column -->
+    <ng-container matColumnDef="latent">
+      <th mat-header-cell *matHeaderCellDef>Latent</th>
+      <td mat-cell *matCellDef="let row">{{row.latent}}</td>
+    </ng-container>
+
+    <!-- HP Column -->
+    <ng-container matColumnDef="hp">
+      <th mat-header-cell *matHeaderCellDef>HP</th>
+      <td mat-cell *matCellDef="let row">{{row.hp}}</td>
+    </ng-container>
+
+    <!-- ATK Column -->
+    <ng-container matColumnDef="atk">
+      <th mat-header-cell *matHeaderCellDef>ATK</th>
+      <td mat-cell *matCellDef="let row">{{row.atk}}</td>
+    </ng-container>
+
+    <!-- RCV Column -->
+    <ng-container matColumnDef="rcv">
+      <th mat-header-cell *matHeaderCellDef>RCV</th>
+      <td mat-cell *matCellDef="let row">{{row.rcv}}</td>
+    </ng-container>
+
+    <!-- MP Column -->
+    <ng-container matColumnDef="mp">
+      <th mat-header-cell *matHeaderCellDef>MP</th>
+      <td mat-cell *matCellDef="let row">{{row.mp}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
