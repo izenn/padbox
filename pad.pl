@@ -148,12 +148,17 @@ for (my $i = 0; $i < $friendcount; $i++ ) {
   $friendline .= "<td>$decodedbox->{'friends'}[$i][2]</td>";
   $friendline .= "<td>$decodedbox->{'friends'}[$i][3]</td>";
   if ($decodedbox->{'friends'}[$i][14] == 1) {
-    $friendline .= "<td><img class='lozad' data-src='/images/cards/card_0" . $decodedbox->{'friends'}[$i][16] . ".png' /></td>";
-    $friendline .= "<td><img class='lozad' data-src='/images/cards/card_0" . $decodedbox->{'friends'}[$i][31] . ".png' /></td>";
-    $friendline .= "<td><img class='lozad' data-src='/images/cards/card_0" . $decodedbox->{'friends'}[$i][46] . ".png' /></td>";
+    my $cardone = sprintf("%05d", $decodedbox->{'friends'}[$i][16]);
+    my $cardtwo = sprintf("%05d", $decodedbox->{'friends'}[$i][31]);
+    my $cardthree = sprintf("%05d", $decodedbox->{'friends'}[$i][46]);
+    $friendline .= "<td><img class='lozad' data-src='/images/cards/card_" . $cardone . ".png' /></td>";
+    $friendline .= "<td><img class='lozad' data-src='/images/cards/card_" . $cardtwo . ".png' /></td>";
+    $friendline .= "<td><img class='lozad' data-src='/images/cards/card_" . $cardthree . ".png' /></td>";
   } else {
-    $friendline .= "<td><img class='lozad' data-src='/images/cards/card_0" . $decodedbox->{'friends'}[$i][16] . ".png' /></td>";
-    $friendline .= "<td><img class='lozad' data-src='/images/cards/card_0" . $decodedbox->{'friends'}[$i][31] . ".png' /></td>";
+    my $cardone = sprintf("%05d", $decodedbox->{'friends'}[$i][16]);
+    my $cardtwo = sprintf("%05d", $decodedbox->{'friends'}[$i][31]);
+    $friendline .= "<td><img class='lozad' data-src='/images/cards/card_" . $cardone . ".png' /></td>";
+    $friendline .= "<td><img class='lozad' data-src='/images/cards/card_" . $cardtwo . ".png' /></td>";
     $friendline .= "<td>&nbsp;</td>";
   };
   $friendline .= "</tr>";
