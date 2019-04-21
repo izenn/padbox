@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource, PageEvent } from '@angular/material';
-import { CardImg, getCardData, RemData } from '../../utils/utils';
+import { constructCardImg, getCardData, RemData } from '../../utils/utils';
 
 import * as padJson from '../../assets/pad.json';
 
@@ -73,7 +73,7 @@ const badgeTypes = ['evo', 'balanced', 'physical', 'healer', 'dragon', 'god',
 
 function loadRemData(card: RemData) {
   getCardData(card.id).then(cardData => {
-    card.img = `${cardUrl}card_${card.id}.png`;
+    card.img = constructCardImg(card.id);
     card.name = cardData.card.name;
     card.rarity = cardData.card.rarity;
     card.type = [];

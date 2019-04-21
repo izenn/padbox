@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
-import { CardImg, TeamData } from '../../utils/utils';
+import { constructCardImg, TeamData } from '../../utils/utils';
 
 import * as padJson from '../../assets/pad.json';
 const mappedCards = {}; 
@@ -20,8 +20,6 @@ export class TeamsComponent implements OnInit {
 
   constructor() {
     const teams = parseTeamData();
-
-    // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(teams);
   }
 
@@ -32,55 +30,40 @@ export class TeamsComponent implements OnInit {
   }
 }
 
-
 function parseTeamData() {
-  const baseUrl = "https://raw.githubusercontent.com/izenn/padbox/master/images/";
-  const cardUrl = `${baseUrl}cards/`;
-  const frameUrl = `${baseUrl}frames/`;
   const teamData = [];
   let teamNumber = 1;
   for(let deck of padJson.decksb.decks) {
-    let teamDataElement: TeamData = {number: null, leader: null, sub1: null, sub2: null, sub3: null, sub4: null, helper: null, badge: null};
+    let teamDataElement: TeamData = {};
     teamDataElement.number = teamNumber.toString();
-    teamDataElement.leader = mappedCards[deck[0]] ? {
-      frame: "",
-      sub: "",
-      src: `${cardUrl}card_${mappedCards[deck[0]][5].toString().padStart(5, "0")}.png`,
-      name: ""
-    } : null;
-    teamDataElement.sub1 = mappedCards[deck[1]] ? {
-      frame: "",
-      sub: "",
-      src: `${cardUrl}card_${mappedCards[deck[1]][5].toString().padStart(5, "0")}.png`,
-      name: ""
-    } : null;
-    teamDataElement.sub2 = mappedCards[deck[2]] ? {
-      frame: "",
-      sub: "",
-      src: `${cardUrl}card_${mappedCards[deck[2]][5].toString().padStart(5, "0")}.png`,
-      name: ""
-    } : null;
-    teamDataElement.sub3 = mappedCards[deck[3]] ? {
-      frame: "",
-      sub: "",
-      src: `${cardUrl}card_${mappedCards[deck[3]][5].toString().padStart(5, "0")}.png`,
-      name: ""
-    } : null;
-    teamDataElement.sub4 = mappedCards[deck[4]] ? {
-      frame: "",
-      sub: "",
-      src: `${cardUrl}card_${mappedCards[deck[4]][5].toString().padStart(5, "0")}.png`,
-      name: ""
-    } : null;
-    teamDataElement.helper = mappedCards[deck[6]] ? {
-      frame: "",
-      sub: "",
-      src: `${cardUrl}card_${mappedCards[deck[6]][5].toString().padStart(5, "0")}.png`,
-      name: ""
-    } : null;
+    if(mappedCards[deck[0]]) {
+      const cardId = mappedCards[deck[0]][5].toString().padStart(5, "0");
+      teamDataElement.leader = constructCardImg(cardId);
+    }
+    if(mappedCards[deck[1]]) {
+      const cardId = mappedCards[deck[1]][5].toString().padStart(5, "0");
+      teamDataElement.sub1 = constructCardImg(cardId);
+    }
+    if(mappedCards[deck[2]]) {
+      const cardId = mappedCards[deck[2]][5].toString().padStart(5, "0");
+      teamDataElement.sub2 = constructCardImg(cardId);
+    }
+    if(mappedCards[deck[3]]) {
+      const cardId = mappedCards[deck[3]][5].toString().padStart(5, "0");
+      teamDataElement.sub3 = constructCardImg(cardId);
+    }
+    if(mappedCards[deck[4]]) {
+      const cardId = mappedCards[deck[4]][5].toString().padStart(5, "0");
+      teamDataElement.sub4 = constructCardImg(cardId);
+    }
+    if(mappedCards[deck[6]]) {
+      const cardId = mappedCards[deck[6]][5].toString().padStart(5, "0");
+      teamDataElement.helper = constructCardImg(cardId);
+    }
     teamDataElement.badge = deck[5] ? deck[5].toString() : null;
     teamData.push(teamDataElement);
     teamNumber++;
   }
   return teamData;
 }
+

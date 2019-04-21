@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
-import { CardImg, UserData } from '../../utils/utils';
+import { constructCardImg, UserData } from '../../utils/utils';
 
 import * as padJson from '../../assets/pad.json';
 
@@ -41,20 +41,20 @@ export class FriendsComponent implements OnInit {
 /** Builds and returns a new User. */
 function parseFriendData(): UserData[] {
   const friendsData: UserData[] = [];
+  const promises = [];
   for(let friend of padJson.friends) {
     const newFriend = {
       id: friend[1].toString(),
       name: friend[2].toString(),
       level: friend[3].toString(),
-      active: "",
-      slot1: "",
-      slot2: ""
+      active: null,
+      slot1: null,
+      slot2: null
     };
-    const baseUrl = "https://raw.githubusercontent.com/izenn/padbox/master/images/cards/";
-    newFriend.active = `${baseUrl}card_0${friend[16]}.png`;
-    newFriend.slot1 = `${baseUrl}card_0${friend[31]}.png`;
+    newFriend.active = constructCardImg(friend[16].toString().padStart(5, "0"));
+    newFriend.slot1 = constructCardImg(friend[31].toString().padStart(5, "0"));
     if(friend[14] === 1) {
-      newFriend.slot2 = `${baseUrl}card_0${friend[46]}.png`;
+      newFriend.slot2 = constructCardImg(friend[46].toString().padStart(5, "0"));
     } 
     friendsData.push(newFriend);
   };

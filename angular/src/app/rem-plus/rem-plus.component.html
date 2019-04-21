@@ -9,7 +9,11 @@
     <ng-container matColumnDef="img">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let row">
-        <img *ngIf="row.id" src="{{row.img}}">
+        <div *ngIf="row.img | async; let cardImg" class="card-img-container">
+          <img *ngIf="cardImg.src" src="{{cardImg.src}}">
+          <img *ngIf="cardImg.frame" src="{{cardImg.frame}}">
+          <img *ngIf="cardImg.sub" src="{{cardImg.sub}}">
+        </div>
       </td>
     </ng-container>
 

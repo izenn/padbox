@@ -11,3 +11,13 @@ table {
 td, th {
   width: calc(100%/8);
 }
+
+.card-img-container {
+  position: relative;
+  width: 98px;
+  height: 98px;
+}
+
+.card-img-container > img {
+  position: absolute;
+}
