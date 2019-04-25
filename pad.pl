@@ -279,6 +279,7 @@ $output .= "</table>
 
 #print "generating box list\n";
 my @monsterarray;
+my %mobilehash;
 for (my $c = 0; $c < $cardcount; $c++ ) {
   my $monsterline;
   my $cardnum = sprintf("%05d", $decodedbox->{'card'}[$c][5]);
@@ -326,6 +327,32 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
   }
   my $typelist = join '', @types;
   $monsterline .= "<td class='type'>$typelist</td>";
+
+  my $types = $decodedmonster->[$cardnum]{'card'}{'type_1_id'};
+  if ( $decodedmonster->[$cardnum]{'card'}{'type_2_id'} > -1 ) {
+    $types .= " " . $decodedmonster->[$cardnum]{'card'}{'type_2_id'};
+  };
+  if ( $decodedmonster->[$cardnum]{'card'}{'type_3_id'} > -1 ) {
+    $types .= " " . $decodedmonster->[$cardnum]{'card'}{'type_3_id'};
+  };
+  if ($types !~ m/(0|12|14|15)/) {
+    if ( $decodedmonster->[$cardnum]{'card'}{'sell_mp'} >= 100 || $decodedbox->{'card'}[$c][2] >= 99 ) {
+      if ( $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} > -1 ) {
+        $mobilehash{$c}->{'mainattr'} = $decodedmonster->[$cardnum]{'card'}{'attr_id'};
+        $mobilehash{$c}->{'subattr'} = $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'};
+      } else {
+        $mobilehash{$c}->{'mainattr'} = $decodedmonster->[$cardnum]{'card'}{'attr_id'};
+        $mobilehash{$c}->{'subattr'} = 5;
+      };
+
+      $mobilehash{$c}->{'name'} = $decodedmonster->[$cardnum]{'card'}{'name'};
+      $mobilehash{$c}->{'rarity'} = $decodedmonster->[$cardnum]{'card'}{'rarity'};
+      $mobilehash{$c}->{'id'} = $decodedbox->{'card'}[$c][5];
+      $mobilehash{$c}->{'paddedid'} = $cardnum;
+    }
+  }
+
+
   my $paddedfamily = sprintf("%05d", $decodedmonster->[$cardnum]{'card'}{'base_id'});
   my $evotree;
   open(my $fh, '<', "evotrees/" . $paddedfamily . ".txt");
@@ -621,7 +648,101 @@ observer.observe();
 </body>
 </html>';
 
+my @mobileordered = sort {
+  $mobilehash{$a}->{'mainattr'} <=> $mobilehash{$b}->{'mainattr'}
+  or
+  $mobilehash{$b}->{'rarity'} <=> $mobilehash{$a}->{'rarity'}
+  or
+  $mobilehash{$a}->{'subattr'} <=> $mobilehash{$b}->{'subattr'}
+  or
+  $mobilehash{$b}->{'id'} <=> $mobilehash{$a}->{'id'}
+} keys %mobilehash;
+
+my $mobileoutput = "<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'/>
+</head>
+<style>
+.card {
+  border: none;
+  padding: 5px;
+  vertical-align: top;
+  position: relative;
+  width: 98px;
+  height: 98px;
+  display: inline-block;
+}
+
+.card img {
+  position: absolute;
+  width: 98px;
+  height: 98px;
+}
+</style>
+<body>
+<div class='container'>
+  <div id='search'>
+    <label for='filter-search'>Search : </label>
+    <input type='text' placeholder='...' id='filter-search' />
+  </div>
+  <div id='gallery'>\n";
+foreach my $mobileitem ( @mobileordered ) {
+my $cleanname = $mobilehash{$mobileitem}->{'name'};
+$cleanname =~ s/\"//g;
+$mobileoutput .= "    <div class=\"card\" data-number=\"$mobilehash{$mobileitem}->{'id'}\" title=\"$cleanname\">";
+$mobileoutput .= "<img class='lozad' data-src=\"/images/cards/card_$mobilehash{$mobileitem}->{'paddedid'}.png\" />";
+if ( $mobilehash{$mobileitem}->{'subattr'} < 5 ) {
+  $mobileoutput .= "<img class='lozad' data-src='/images/frames/frame_" . $mobilehash{$mobileitem}->{'mainattr'} . ".png' /><img class='lozad' data-src='/images/frames/sub_" . $mobilehash{$mobileitem}->{'subattr'} . ".png' /></div>\n";
+} else {
+  $mobileoutput .= "<img class='lozad' data-src='/images/frames/frame_" . $mobilehash{$mobileitem}->{'mainattr'} . ".png' /></div>\n";
+}
+}
+$mobileoutput .= '  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lozad"></script>
+
+<script>
+(function () {
+  var $imgs = $(\'#gallery .card\');
+  var $search = $(\'#filter-search\');
+  var cache = [];
+
+  $imgs.each(function () {
+    cache.push({
+      element: this,
+      text:  this.getAttribute(\'data-number\').trim().toLowerCase() + " " + this.title.trim().toLowerCase() });
+  });
+
+  function filter() {
+    var query = this.value.trim().toLowerCase();
+    cache.forEach(function (img) {
+      var index = 0;
+      if (query) {
+        index = img.text.indexOf(query);
+      }
+      img.element.style.display = index === -1 ? \'none\' : \'\';
+    });
+  }
+  if (\'oninput\' in $search[0]) {
+    $search.on(\'input\', filter);
+  } else {
+    $search.on(\'keyup\', filter);
+  }
+}());
+
+const observer = lozad();
+observer.observe();
+</script>
+</body></html>';
+
 #print "writing to file\n";
 open (my $fh, '>', "box/$userid.html");
   print $fh $output;
 close $fh;
+
+open (my $mobilefile, '>', "box/$userid-mobile.html");
+  print $mobilefile $mobileoutput;
+close $mobilefile;

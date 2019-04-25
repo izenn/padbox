@@ -1,6 +1,7 @@
    3704 Male Hunter
-   |-> 3705 Male Hunter Rathalos X Gear
-   |-> 3706 Male Hunter Mizutsune X Gear
-   |-> 3707 Male Hunter Demon X Gear
+   |-> 3705 Male Hunter, Rathalos X Gear
+   |-> 3706 Male Hunter, Mizutsune X Gear
+   |-> 3707 Male Hunter, Demon X Gear
    |-> 4171 Male Hunter, Brachydios X Gear
    |-> 4172 Male Hunter, Nergigante Alpha Gear
+   |-> 5199 Male Hunter, Auroros Gear
