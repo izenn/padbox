@@ -27,6 +27,7 @@ Beta
   * ~~lazy image loading~~
   * Framework?  angular? see angular-ui branch
   * API for pad_proxy?
+  * mobile (started)
 
 Thanks
 ------
