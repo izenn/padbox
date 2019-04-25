@@ -691,11 +691,11 @@ foreach my $mobileitem ( @mobileordered ) {
 my $cleanname = $mobilehash{$mobileitem}->{'name'};
 $cleanname =~ s/\"//g;
 $mobileoutput .= "    <div class=\"card\" data-number=\"$mobilehash{$mobileitem}->{'id'}\" title=\"$cleanname\">";
-$mobileoutput .= "<img class='lozad' data-src=\"/images/cards/card_$mobilehash{$mobileitem}->{'paddedid'}.png\" />";
+$mobileoutput .= "<a href=\"http://www.puzzledragonx.com/en/monster.asp?n=$mobilehash{$mobileitem}->{'id'}\"><img class='lozad' data-src=\"/images/cards/card_$mobilehash{$mobileitem}->{'paddedid'}.png\" />";
 if ( $mobilehash{$mobileitem}->{'subattr'} < 5 ) {
-  $mobileoutput .= "<img class='lozad' data-src='/images/frames/frame_" . $mobilehash{$mobileitem}->{'mainattr'} . ".png' /><img class='lozad' data-src='/images/frames/sub_" . $mobilehash{$mobileitem}->{'subattr'} . ".png' /></div>\n";
+  $mobileoutput .= "<img class='lozad' data-src='/images/frames/frame_" . $mobilehash{$mobileitem}->{'mainattr'} . ".png' /><img class='lozad' data-src='/images/frames/sub_" . $mobilehash{$mobileitem}->{'subattr'} . ".png' /></a></div>\n";
 } else {
-  $mobileoutput .= "<img class='lozad' data-src='/images/frames/frame_" . $mobilehash{$mobileitem}->{'mainattr'} . ".png' /></div>\n";
+  $mobileoutput .= "<img class='lozad' data-src='/images/frames/frame_" . $mobilehash{$mobileitem}->{'mainattr'} . ".png' /></a></div>\n";
 }
 }
 $mobileoutput .= '  </div>
@@ -743,6 +743,6 @@ open (my $fh, '>', "box/$userid.html");
   print $fh $output;
 close $fh;
 
-open (my $mobilefile, '>', "box/$userid-mobile.html");
+open (my $mobilefile, '>', "m/$userid.html");
   print $mobilefile $mobileoutput;
 close $mobilefile;
