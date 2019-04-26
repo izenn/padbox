@@ -54,9 +54,6 @@ $output = '<!DOCTYPE html>
 <script src="https://cdn.jsdelivr.net/npm/lozad"></script>
 
 <style>
-.tooltip-inner {
-    max-width: 1280px;
-}
 table, tbody, tfoot, thead, tr, th, td {
   font-size: 100%;
 }
@@ -99,9 +96,18 @@ button:hover {
 }
 
 .tooltip-inner {
-  text-align:left;
   background-color: white;
- }
+  max-width: 600px;
+}
+
+pre {
+  text-align: left;
+}
+
+.teamslot {
+  width: 600px;
+  height: 500px;
+}
 
 #topbutton {
   display: none;
@@ -185,82 +191,41 @@ for (my $t = 0; $t < $teamcount; $t++) {
   my @teamlist = ("<td>&nbsp;</td>") x 6;
   my $teamnum = $t + 1;
   $teamrow = "      <tr><td>" . $teamnum . "</td>";
-  for (my $x = 0; $x < $cardcount; $x++) {
-    if ( $decodedbox->{'card'}[$x][0] == $decodedbox->{'decksb'}{'decks'}[$t][0] ) {
-      my $foundcard = sprintf("%05d", $decodedbox->{'card'}[$x][5]);
-      my $cardnum = $decodedbox->{'card'}[$x][5];
-      my $framedata;
-      if ( $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} > -1 ) {
-        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='/images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
-      } else {
-        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
-      };
-        $teamlist[0] = "<td class='card'><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
-    }
-  }
-  for (my $x = 0; $x < $cardcount; $x++) {
-    if ( $decodedbox->{'card'}[$x][0] == $decodedbox->{'decksb'}{'decks'}[$t][1] ) {
-      my $foundcard = sprintf("%05d", $decodedbox->{'card'}[$x][5]);
-      my $cardnum = $decodedbox->{'card'}[$x][5];
-      my $framedata;
-      if ( $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} > -1 ) {
-        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='/images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
-      } else {
-        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
-      };
-        $teamlist[1] = "<td class='card'><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
-    }
-  }
-  for (my $x = 0; $x < $cardcount; $x++) {
-    if ( $decodedbox->{'card'}[$x][0] == $decodedbox->{'decksb'}{'decks'}[$t][2] ) {
-      my $foundcard = sprintf("%05d", $decodedbox->{'card'}[$x][5]);
-      my $cardnum = $decodedbox->{'card'}[$x][5];
-      my $framedata;
-      if ( $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} > -1 ) {
-        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='/images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
-      } else {
-        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
-      };
-        $teamlist[2] = "<td class='card'><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
-    }
-  }
-  for (my $x = 0; $x < $cardcount; $x++) {
-    if ( $decodedbox->{'card'}[$x][0] == $decodedbox->{'decksb'}{'decks'}[$t][3] ) {
-      my $foundcard = sprintf("%05d", $decodedbox->{'card'}[$x][5]);
-      my $cardnum = $decodedbox->{'card'}[$x][5];
-      my $framedata;
-      if ( $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} > -1 ) {
-        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='/images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
-      } else {
-        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
-      };
-        $teamlist[3] = "<td class='card'><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
-    }
-  }
-  for (my $x = 0; $x < $cardcount; $x++) {
-    if ( $decodedbox->{'card'}[$x][0] == $decodedbox->{'decksb'}{'decks'}[$t][4] ) {
-      my $foundcard = sprintf("%05d", $decodedbox->{'card'}[$x][5]);
-      my $cardnum = $decodedbox->{'card'}[$x][5];
-      my $framedata;
-      if ( $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} > -1 ) {
-        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='/images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
-      } else {
-        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
-      };
-        $teamlist[4] = "<td class='card'><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
-    }
-  }
-  for (my $x = 0; $x < $cardcount; $x++) {
-    if ( $decodedbox->{'card'}[$x][0] == $decodedbox->{'decksb'}{'decks'}[$t][6] ) {
-      my $foundcard = sprintf("%05d", $decodedbox->{'card'}[$x][5]);
-      my $cardnum = $decodedbox->{'card'}[$x][5];
-      my $framedata;
-      if ( $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} > -1 ) {
-        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='/images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
-      } else {
-        $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
-      };
-        $teamlist[5] = "<td class='card'><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
+  for (my $s = 0; $s < 7; $s++) {
+    for (my $x = 0; $x < $cardcount; $x++) {
+      if ( $decodedbox->{'card'}[$x][0] == $decodedbox->{'decksb'}{'decks'}[$t][$s] ) {
+        my $foundcard = sprintf("%05d", $decodedbox->{'card'}[$x][5]);
+        my $assistnum;
+        for (my $a = 0; $a < $cardcount; $a++) {
+          if ( $decodedbox->{'card'}[$a][0] ==  $decodedbox->{'card'}[$x][11]) {
+            $assistnum = $decodedbox->{'card'}[$a][5]
+          }
+        }
+        my $assistdata;
+        if ( defined $assistnum ) {
+          my $paddedassist = sprintf("%05d", $assistnum);
+          $assistdata = "<div class='card'><img src='/images/cards/card_" . $paddedassist . ".png'>";
+          if ( $decodedmonster->[$assistnum]{'card'}{'sub_attr_id'} > -1 ) {
+            $assistdata .= "<img src='/images/frames/frame_" . $decodedmonster->[$assistnum]{'card'}{'attr_id'} . ".png'><img src='/images/frames/sub_" . $decodedmonster->[$assistnum]{'card'}{'sub_attr_id'} . ".png'></div>";
+          } else {
+            $assistdata .= "<img src='/images/frames/frame_" . $decodedmonster->[$assistnum]{'card'}{'attr_id'} . ".png'></div>";
+          }
+        } else {
+          $assistdata = "";
+        }
+        my $cardnum = $decodedbox->{'card'}[$x][5];
+        my $framedata;
+        if ( $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} > -1 ) {
+          $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='/images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
+        } else {
+          $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
+        };
+        if ( $s == 6 ) {
+          $teamlist[5] = "<td class='card' data-toggle='tooltip' data-html='true' data-placement='right' title=\"<div class='teamslot'><img src='/images/monster/MONS_" . $foundcard . ".png'></div>\"><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
+        } else {
+          $teamlist[$s] = "<td class='card' data-toggle='tooltip' data-html='true' data-placement='right' title=\"<div class='teamslot'><img src='/images/monster/MONS_" . $foundcard . ".png'></br>" . $assistdata . "</div>\"><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
+        }
+      }
     }
   }
   $teamrow .= join("", @teamlist);
@@ -268,7 +233,6 @@ for (my $t = 0; $t < $teamcount; $t++) {
   $teamrow .= "</tr>";
   push @teamarray, $teamrow; 
 };
-
 push @teamarray, "    </tbody>
   </table></td></tr>\n";
 
