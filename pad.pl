@@ -54,6 +54,14 @@ $output = '<!DOCTYPE html>
 <script src="https://cdn.jsdelivr.net/npm/lozad"></script>
 
 <style>
+body {
+  background-image: url("/images/background.webp");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+table td, table tr, table th {
+  background: transparent !important;
+}
 table, tbody, tfoot, thead, tr, th, td {
   font-size: 100%;
 }
@@ -106,7 +114,8 @@ pre {
 
 .teamslot {
   width: 600px;
-  height: 500px;
+  min-height: 350px;
+  max-height: 500px;
 }
 
 #topbutton {
@@ -221,7 +230,7 @@ for (my $t = 0; $t < $teamcount; $t++) {
           $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
         };
         if ( $s == 6 ) {
-          $teamlist[5] = "<td class='card' data-toggle='tooltip' data-html='true' data-placement='right' title=\"<div class='teamslot'><img src='/images/monster/MONS_" . $foundcard . ".png'></div>\"><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
+          $teamlist[5] = "<td class='card' data-toggle='tooltip' data-html='true' data-placement='right' title=\"<div class='teamslot'><img src='/images/monster/MONS_" . $foundcard . ".png'></br>" . $assistdata . "</div>\"><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
         } else {
           $teamlist[$s] = "<td class='card' data-toggle='tooltip' data-html='true' data-placement='right' title=\"<div class='teamslot'><img src='/images/monster/MONS_" . $foundcard . ".png'></br>" . $assistdata . "</div>\"><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
         }
