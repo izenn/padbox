@@ -1,2 +1,3 @@
    4059 Nemain
    |-> 4060 Abyssal Hands War Goddess, Nemain
+   |   |-> 5063 Abyssal Cursed Sword Goddess, Nemain

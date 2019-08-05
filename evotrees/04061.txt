@@ -1,2 +1,4 @@
    4061 Morrigu
    |-> 4062 Ruining Hands War Goddess, Morrigu
+   |   |-> 5207 Ruining Hellbird Goddess, Morrigu
+   |   |-> 5208 Ruining Massacre Sword Goddess, Morrigu

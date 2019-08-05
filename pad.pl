@@ -10,6 +10,18 @@ my $monsterjson;
 my $output;
 my $upload = $ARGV[0];
 my $userid = $ARGV[1];
+my $reference = $ARGV[2];
+
+my $refurl;
+
+if ( $reference eq "ilmina" ) {
+  $refurl = "https://ilmina.com/#/CARD/";
+} elsif ( $reference eq "pdx" ) {
+  $refurl = "http://www.puzzledragonx.com/en/monster.asp?n=";
+} else {
+  print "select reference source\n";
+  exit(0);
+}
 
 #print "importing box json\n";
 {
@@ -104,8 +116,12 @@ button:hover {
 }
 
 .tooltip-inner {
-  background-color: white;
+  background: rgba(255, 255, 255, 0.75);
   max-width: 600px;
+}
+
+.tooltip.show {
+  opacity: 1;
 }
 
 pre {
@@ -262,7 +278,7 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
   } else {
     $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
   };
-  $monsterline .= "      <tr><td class='card'><a href='http://www.puzzledragonx.com/en/monster.asp?n=$decodedbox->{'card'}[$c][5]'><img class='lozad' data-src='/images/cards/card_" . $cardnum . ".png' alt='$cardnum'>$framedata</a></td>";
+  $monsterline .= "      <tr><td class='card'><a href='$refurl$decodedbox->{'card'}[$c][5]'><img class='lozad' data-src='/images/cards/card_" . $cardnum . ".png' alt='$cardnum'>$framedata</a></td>";
   $monsterline .= "<td style='display:none'>$decodedmonster->[$cardnum]{'card'}{'attr_id'}</td>";
 
   my $subattr;
@@ -664,7 +680,7 @@ foreach my $mobileitem ( @mobileordered ) {
 my $cleanname = $mobilehash{$mobileitem}->{'name'};
 $cleanname =~ s/\"//g;
 $mobileoutput .= "    <div class=\"card\" data-number=\"$mobilehash{$mobileitem}->{'id'}\" title=\"$cleanname\">";
-$mobileoutput .= "<a href=\"http://www.puzzledragonx.com/en/monster.asp?n=$mobilehash{$mobileitem}->{'id'}\"><img class='lozad' data-src=\"/images/cards/card_$mobilehash{$mobileitem}->{'paddedid'}.png\" />";
+$mobileoutput .= "<a href=\"$refurl$mobilehash{$mobileitem}->{'id'}\"><img class='lozad' data-src=\"/images/cards/card_$mobilehash{$mobileitem}->{'paddedid'}.png\" />";
 if ( $mobilehash{$mobileitem}->{'subattr'} < 5 ) {
   $mobileoutput .= "<img class='lozad' data-src='/images/frames/frame_" . $mobilehash{$mobileitem}->{'mainattr'} . ".png' /><img class='lozad' data-src='/images/frames/sub_" . $mobilehash{$mobileitem}->{'subattr'} . ".png' /></a></div>\n";
 } else {

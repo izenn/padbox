@@ -1,2 +1,3 @@
    4705 Raizer
    |-> 4706 Orion the Hunter Card
+   |-> 5212 Raizer (Dark Color)

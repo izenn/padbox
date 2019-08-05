@@ -10,7 +10,7 @@ my @bcarray = `ls data/HT/bc/cards_*.bc`;
 chomp @bcarray;
 
 foreach my $bc (@bcarray) {
-#  `python PADTextureTool.py $bc`;
+  `python PADTextureTool.py $bc`;
 }
 
 `mv data/HT/bc/CARD*.PNG cards`;

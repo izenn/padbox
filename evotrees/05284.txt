@@ -1,0 +1,6 @@
+   5284 gudetama
+   |-> 5285 gudetama with bacon
+   |-> 5286 gudetama omelette rice
+   |-> 5287 gudetama pancake
+   |-> 5288 gudetama rolled omelette
+   |-> 5289 Oden gudetama
