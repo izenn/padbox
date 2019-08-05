@@ -1,6 +1,6 @@
 **/.DS_Store
 web/
 paddata_processed_na_cards.json
-images/monster/
-images/cards/
-evotrees/
+images/monster/*
+images/cards/*
+evotrees/*
