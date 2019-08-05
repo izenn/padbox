@@ -1,4 +1,0 @@
-   2778 Lightning
-   |-> 2779 Knight of Etro, Lightning
-   |   |-> 2780 Savior, Lightning
-   |   |-> 3821 Pixel Lightning

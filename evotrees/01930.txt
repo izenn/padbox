@@ -1,9 +1,0 @@
-   1930 Plessie-bean
-   |-> 5 Plessie
-   |   |-> 6 Plesiel
-   |   |   |-> 7 Plesios
-   |   |   |   |-> 8 Icedragon Plesios
-   |   |   |   |   |-> 481 Icedragon Depth Plesios
-   |   |   |   |   |-> 1920 Phantom Icedragon, Mirage Plesios
-   |   |   |   |   |-> 3969 Pixel Icedragon Plesios
-   |   |   |   |   |-> 4426 Icedragon King Plesios

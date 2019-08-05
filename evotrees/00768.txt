@@ -1,3 +1,0 @@
-   768 GC CRAB
-   |-> 769 GC CRAB Ver.2
-   |   |-> 1322 GC CRAB Ver.3

@@ -1,3 +1,0 @@
-   384 Dragon Rider
-   |-> 385 Dragon Rider Arthur
-   |   |-> 1304 Dragon Rider, King Arthur

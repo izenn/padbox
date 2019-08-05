@@ -1,4 +1,0 @@
-   288 Drall
-   |-> 289 Agdrall
-   |   |-> 290 Flare Drall
-   |   |   |-> 757 Scorched Claw Dragon, Flare Drall

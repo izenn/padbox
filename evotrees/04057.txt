@@ -1,4 +1,0 @@
-   4057 Macha
-   |-> 4058 Blazing Hands War Goddess, Macha
-   |   |-> 5205 Blazing Lance Goddess, Macha
-   |   |-> 5206 Blazing Hellhorse Goddess, Macha

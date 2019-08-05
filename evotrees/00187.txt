@@ -1,7 +1,0 @@
-   187 Zeus
-   |-> 188 Awoken Zeus
-   |   |-> 917 Awoken Zeus Olympios
-   |   |   |-> 2928 Zeus Olympios Armor X Dragon Caller, Ace
-   |   |   |-> 4012 Zeus Verse
-   |   |   |   |-> 4013 World's Omnipotent God, Zeus Verse
-   |   |-> 918 Awoken Zeus Stratios

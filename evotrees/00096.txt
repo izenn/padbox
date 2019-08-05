@@ -1,6 +1,0 @@
-   96 Succubus
-   |-> 97 Lilith
-   |   |-> 205 Witch of the Night, Lilith
-   |   |   |-> 1105 Moonbeam Fang Witch, Lilith
-   |   |   |-> 1106 Pitch Black Night Princess, Lilith
-   |   |   |-> 3871 Pixel Witch of the Night, Lilith

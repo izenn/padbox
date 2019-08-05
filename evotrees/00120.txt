@@ -1,7 +1,0 @@
-   120 Basilisk
-   |-> 121 Tiamat
-   |   |-> 338 Blazing Dark Tiamat
-   |   |-> 339 Flowing Dark Tiamat
-   |   |-> 340 Wooden Dark Tiamat
-   |   |-> 341 Lightning Dark Tiamat
-   |   |-> 1111 Dark Twin Star Tiamat

@@ -1,4 +1,0 @@
-   300 Pierdra
-   |-> 301 Pierdrawn
-   |   |-> 302 Drawn Joker
-   |   |   |-> 761 Jester Dragon, Drawn Joker

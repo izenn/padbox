@@ -1,3 +1,0 @@
-   551 Low Light Ninja
-   |-> 552 Mid Light Ninja
-   |   |-> 1529 High Light Ninja

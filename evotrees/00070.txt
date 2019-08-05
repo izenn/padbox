@@ -1,3 +1,0 @@
-   70 Aqua Fighter
-   |-> 71 Aqua Knight
-   |   |-> 907 Aqua Baron

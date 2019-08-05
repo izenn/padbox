@@ -1,6 +1,0 @@
-   1332 Sarasvati
-   |-> 1333 Blessed River Goddess, Sarasvati
-   |   |-> 2080 Wise and Moral Goddess, Sarasvati
-   |   |   |-> 3069 Heavenly Virtuous Goddess, Sarasvati
-   |   |-> 3593 Awoken Sarasvati
-   |   |   |-> 4270 Reincarnated Sarasvati

@@ -1,3 +1,0 @@
-   56 Red Goblin
-   |-> 57 Samurai Goblin
-   |   |-> 689 Rowdy Red Samurai Goblin

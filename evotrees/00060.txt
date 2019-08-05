@@ -1,3 +1,0 @@
-   60 Goblin
-   |-> 61 Hobgoblin
-   |   |-> 691 Heavy Infantry Hobgoblin

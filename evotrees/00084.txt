@@ -1,4 +1,0 @@
-   84 Machine Golem
-   |-> 85 Machine Golem Mk.II
-   |   |-> 319 Machine Golem Mk.III
-   |   |   |-> 2127 Light Mech General, Sherospada

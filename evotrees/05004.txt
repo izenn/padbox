@@ -1,3 +1,0 @@
-   5004 Servant, Saber
-   |-> 5005 Servant, Saber Alter
-   |   |-> 5006 Saber Alter's Visor

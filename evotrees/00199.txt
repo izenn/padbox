@@ -1,3 +1,0 @@
-   199 Blood Devil
-   |-> 200 Blood Demon
-   |   |-> 479 Helldark Blood Demon

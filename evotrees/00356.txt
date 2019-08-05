@@ -1,3 +1,0 @@
-   356 Sylph
-   |-> 357 Sylph, the Wind Elemental
-   |   |-> 921 Elemental of Levity, Sylph

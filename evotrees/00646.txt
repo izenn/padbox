@@ -1,5 +1,0 @@
-   646 Satan
-   |-> 647 Satan, King of the Underworld
-   |   |-> 1646 King of Hell, Satan
-   |   |   |-> 4285 Satan Void
-   |   |   |   |-> 4286 King of Perdition, Satan Void

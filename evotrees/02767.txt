@@ -1,5 +1,0 @@
-   2767 Cecil
-   |-> 2768 Dark Knight, Cecil
-   |-> 2769 Paladin, Cecil
-   |-> 3815 Pixel Dark Knight, Cecil
-   |-> 3816 Pixel Paladin, Cecil

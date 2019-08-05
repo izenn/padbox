@@ -1,6 +1,0 @@
-   122 Minerva
-   |-> 123 War Deity Minerva
-   |   |-> 388 War Deity, Saint Minerva
-   |   |-> 389 War Deity, Dark Minerva
-   |   |-> 1533 Awoken Minerva
-   |   |   |-> 3238 Reincarnated Minerva

@@ -1,9 +1,0 @@
-   1929 Tyrra-bean
-   |-> 1 Tyrra
-   |   |-> 2 Tyran
-   |   |   |-> 3 Tyrannos
-   |   |   |   |-> 4 Firedragon Tyrannos
-   |   |   |   |   |-> 480 Firedragon Grand Tyrannos
-   |   |   |   |   |-> 1919 Rumbling Firedragon, Armored Tyrannos
-   |   |   |   |   |-> 3968 Pixel Firedragon Tyrannos
-   |   |   |   |   |-> 4425 Firedragon King Tyrannos

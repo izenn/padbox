@@ -1,3 +1,0 @@
-   191 Pyro Devil
-   |-> 192 Pyro Demon
-   |   |-> 475 Hellfire Pyro Demon

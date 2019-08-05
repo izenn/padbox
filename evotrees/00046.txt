@@ -1,3 +1,0 @@
-   46 Red Carbuncle
-   |-> 47 Ruby Carbuncle
-   |   |-> 206 Mars Light Carbuncle

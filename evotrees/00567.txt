@@ -1,6 +1,0 @@
-   567 Ares
-   |-> 568 War Deity Ares
-   |   |-> 889 War Deity of Fury, Ares
-   |   |-> 2235 Avenging War Deity, Ares
-   |   |-> 2747 Awoken Ares
-   |   |   |-> 3492 Reincarnated Ares

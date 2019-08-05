@@ -1,7 +1,0 @@
-   126 Ceres
-   |-> 127 Fertility Deity Ceres
-   |   |-> 392 Fertility Deity, Holy Ceres
-   |   |   |-> 3089 Holy Ceres Armor X Dragon Caller, Ana
-   |   |-> 393 Fertility Deity, Evil Ceres
-   |   |-> 1535 Awoken Ceres
-   |   |   |-> 3240 Reincarnated Ceres

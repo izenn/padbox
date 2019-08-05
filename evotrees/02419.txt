@@ -1,5 +1,0 @@
-   2419 Spica
-   |-> 2420 Dark Plant Mechanical Star God, Spica
-   |   |-> 3057 Spirit Tree Mechanical Star God, Spica
-   |   |-> 3058 Life Tree Mechanical Star God, Spica
-   |   |-> 4244 Awoken Spica

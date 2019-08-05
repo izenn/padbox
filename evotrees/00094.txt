@@ -1,6 +1,0 @@
-   94 Cupid
-   |-> 95 Angel
-   |   |-> 204 Messenger of God, Archangel
-   |   |   |-> 1103 Heavenly Herald, Archangel
-   |   |   |-> 1104 Sanctuary Guardian, Archangel
-   |   |   |-> 3870 Pixel Messenger of God, Archangel

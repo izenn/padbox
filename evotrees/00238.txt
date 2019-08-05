@@ -1,6 +1,0 @@
-   238 Lakshmi
-   |-> 239 Fortune Deity Lakshmi
-   |   |-> 1114 Heavenly Fortune Goddess, Lakshmi
-   |   |-> 1115 Purple Lotus Chanter, Lakshmi
-   |   |-> 1955 Awoken Lakshmi
-   |   |   |-> 3242 Reincarnated Lakshmi

@@ -1,6 +1,0 @@
-   92 Dryad
-   |-> 93 Mandrake
-   |   |-> 203 Mystical Forest Pixie, Alraune
-   |   |   |-> 1101 World Tree Sprite, Alraune
-   |   |   |-> 1102 Creation Tree Spirit, Alraune
-   |   |   |-> 3869 Pixel Mystical Forest Pixie, Alraune

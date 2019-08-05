@@ -1,6 +1,0 @@
-   632 Amon
-   |-> 633 Blizzard Archdemon Amon
-   |   |-> 1258 Chivalrous Demon Lord, Amon
-   |   |   |-> 2504 Resolved Demon Lord, Amon
-   |   |-> 3532 Awoken Amon
-   |   |   |-> 4267 Reincarnated Amon

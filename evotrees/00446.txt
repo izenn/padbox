@@ -1,4 +1,0 @@
-   446 Chocobo
-   |-> 732 Red Chocobo&Chocobo Knight
-   |-> 733 Blue Chocobo&Chocobo Knight
-   |-> 734 Green Chocobo&Chocobo Knight

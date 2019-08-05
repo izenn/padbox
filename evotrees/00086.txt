@@ -1,4 +1,0 @@
-   86 Dark Golem
-   |-> 87 Dark Golem Mk.II
-   |   |-> 320 Dark Golem Mk.III
-   |   |   |-> 2128 Dark Mech General, Hysferzen

@@ -1,6 +1,0 @@
-   1069 Perseus
-   |-> 1070 Vanquishing Deity, Perseus
-   |   |-> 1734 Green Star Vanquishing Deity, Perseus
-   |   |   |-> 2659 Brave Vanquishing Deity, Perseus
-   |   |-> 3511 Awoken Perseus
-   |   |   |-> 4276 Reincarnated Perseus

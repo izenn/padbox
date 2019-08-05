@@ -1,3 +1,0 @@
-   58 Blue Goblin
-   |-> 59 Marine Goblin
-   |   |-> 690 Marine Spec Ops Goblin

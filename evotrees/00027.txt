@@ -1,5 +1,0 @@
-   27 Lil' Green Dragon
-   |-> 28 Green Dragon
-   |   |-> 29 Earth Dragon
-   |   |   |-> 213 Graviton Earth Dragon
-   |   |   |   |-> 1092 Generate Earth Dragon

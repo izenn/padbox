@@ -1,5 +1,0 @@
-   100 Mystic Ice Knight
-   |-> 101 Fenrir Knight
-   |   |-> 230 Fenrir Knight Kamui
-   |   |   |-> 823 Torrential Fenrir Knight, Kamui
-   |   |   |   |-> 2740 Reincarnated Torrential Fenrir Knight, Kamui

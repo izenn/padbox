@@ -1,3 +1,0 @@
-   54 Purple Carbuncle
-   |-> 55 Amethyst Carbuncle
-   |   |-> 210 Moonlight Carbuncle

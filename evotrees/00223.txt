@@ -1,6 +1,0 @@
-   223 Highlander
-   |-> 224 Cu Chulainn, the Green Lancer
-   |   |-> 514 More Cu Chulainn, the Hero
-   |   |   |-> 693 Noble Wolf King Hero, Cu Chulainn
-   |   |   |-> 1209 Wolf Hero, Ignis Cu Chulainn
-   |   |   |   |-> 3919 Gáe Bulg

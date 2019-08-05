@@ -1,6 +1,0 @@
-   124 Neptune
-   |-> 125 Sea Deity Neptune
-   |   |-> 390 Sea Deity, Heaven Neptune
-   |   |-> 391 Sea Deity, Abyss Neptune
-   |   |-> 1534 Awoken Neptune
-   |   |   |-> 3239 Reincarnated Neptune

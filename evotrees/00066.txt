@@ -1,4 +1,0 @@
-   66 Ogre
-   |-> 67 Armor Ogre
-   |   |-> 314 Flame Armor Ogre
-   |   |-> 315 Ice Armor Ogre

@@ -1,5 +1,0 @@
-   108 Mystic Dark Knight
-   |-> 109 Dark Dragon Knight
-   |   |-> 233 Chaos Dragon Knight
-   |   |   |-> 826 Chaos Dragon Knight, Voice
-   |   |   |   |-> 2743 Reincarnated Chaos Dragon Knight, Voice

@@ -1,3 +1,0 @@
-   68 Flame Fighter
-   |-> 69 Flame Knight
-   |   |-> 906 Flame Baron

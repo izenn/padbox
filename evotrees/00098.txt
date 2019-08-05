@@ -1,5 +1,0 @@
-   98 Mystic Flame Knight
-   |-> 99 Phoenix Knight
-   |   |-> 229 Phoenix Knight Homura
-   |   |   |-> 822 Burning Phoenix Knight, Homura
-   |   |   |   |-> 2739 Reincarnated Burning Phoenix Knight, Homura

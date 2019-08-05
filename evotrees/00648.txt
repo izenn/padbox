@@ -1,5 +1,0 @@
-   648 Athena
-   |-> 649 Awoken Athena
-   |   |-> 1422 Guardian of the Sacred City, Athena
-   |   |   |-> 3833 Athena Helios
-   |   |   |   |-> 3834 Guardian Deity of the Sky City, Athena Helios

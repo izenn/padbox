@@ -1,7 +1,0 @@
-   114 Sea Serpent
-   |-> 115 Leviathan
-   |   |-> 326 Red Ice Leviathan
-   |   |-> 327 Green Ice Leviathan
-   |   |-> 328 Shining Ice Leviathan
-   |   |-> 329 Dark Ice Leviathan
-   |   |-> 1095 Water Twin Star Leviathan

@@ -1,4 +1,0 @@
-   3456 Demonic Gentleman, Azazel
-   |-> 3457 Lawless Demonic Gentleman, Azazel
-   |   |-> 3458 Enlightened Demonic Gentleman, Azazel
-   |   |   |-> 3459 Demonic Gentleman of Heresy, Azazel

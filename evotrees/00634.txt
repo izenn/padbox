@@ -1,6 +1,0 @@
-   634 Astaroth
-   |-> 635 Wind Archdemon Astaroth
-   |   |-> 1259 Dreaming Archdemon, Astaroth
-   |   |-> 1260 Pure Demon Lord, Astaroth
-   |   |-> 2505 Awoken Astaroth
-   |   |   |-> 3507 Reincarnated Astaroth

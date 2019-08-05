@@ -1,3 +1,0 @@
-   74 White Fighter
-   |-> 75 White Knight
-   |   |-> 909 White Baron

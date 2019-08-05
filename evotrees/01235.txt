@@ -1,6 +1,0 @@
-   1235 Liu Bei
-   |-> 1236 Moral Commanding Deity, Liu Bei
-   |   |-> 1742 Guardian Divine Emperor, Liu Bei
-   |   |-> 1743 Restrained Dragon Hero, Liu Bei
-   |   |-> 2903 Awoken Liu Bei
-   |   |   |-> 3499 Reincarnated Liu Bei

@@ -1,7 +1,0 @@
-   116 Dragonette
-   |-> 117 Fafnir
-   |   |-> 330 Red Wood Fafnir
-   |   |-> 331 Blue Wood Fafnir
-   |   |-> 332 Shining Wood Fafnir
-   |   |-> 333 Dark Wood Fafnir
-   |   |-> 1096 Wind Twin Star Fafnir
