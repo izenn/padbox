@@ -4,3 +4,6 @@ paddata_processed_na_cards.json
 images/monster/*.png
 images/cards/*.png
 evotrees/*.txt
+uploads/
+box/
+m/
