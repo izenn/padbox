@@ -371,9 +371,9 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
   if ( $awakenings > 0 ) {
     for ( my $a = 0; $a < $awakenings; $a++ ) {
       if ( $a < $awoken ) {
-        $awokenskills .= "<img class='lozad' data-src='/images/awakenings/" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . ".png' alt='" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . "'>";
+        $awokenskills .= "<img src='/images/awakenings/" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . ".png' alt='" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . "'>";
       } else {
-        $awokenskills .= "<img class='lozad' data-src='/images/awakenings/unawoken/" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . ".png' alt='" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . "'>";
+        $awokenskills .= "<img src='/images/awakenings/unawoken/" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . ".png' alt='" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . "'>";
       }
     }
     $monsterline .= "<td>$awokenskills</td>";
