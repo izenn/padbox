@@ -117,6 +117,7 @@ button:hover {
 
 .tooltip-inner {
   background: rgba(255, 255, 255, 0.75);
+  max-width: 306px;
 }
 
 .tooltip.show {
@@ -132,12 +133,21 @@ pre {
 }
 
 .awoken {
+  width: 290px;
+  display: flex;
+}
+
+.assist {
   width: 196px;
   display: flex;
 }
 
+.noassist {
+  width: 98px;
+}
+
 .column {
-  flex: 50%;
+  flex: 33%;
 }
 
 #topbutton {
@@ -232,32 +242,54 @@ for (my $t = 0; $t < $teamcount; $t++) {
             $assistnum = $decodedbox->{'card'}[$a][5]
           }
         }
-        my $assistdata;
-        my $awokentooltip;
+        my $assistcard;
+        my $assistslots;
+        my $assisttooltip;
+        my $assistflag = 0;
         if ( defined $assistnum ) {
           my $paddedassist = sprintf("%05d", $assistnum);
-          $assistdata = "<div class='card'><img src='/images/cards/card_" . $paddedassist . ".png'>";
+          $assistcard = "<div class='card'><img src='/images/cards/card_" . $paddedassist . ".png'>";
           if ( $decodedmonster->[$assistnum]{'card'}{'sub_attr_id'} > -1 ) {
-            $assistdata .= "<img src='/images/frames/frame_" . $decodedmonster->[$assistnum]{'card'}{'attr_id'} . ".png'><img src='/images/frames/sub_" . $decodedmonster->[$assistnum]{'card'}{'sub_attr_id'} . ".png'></div>";
+            $assistcard .= "<img src='/images/frames/frame_" . $decodedmonster->[$assistnum]{'card'}{'attr_id'} . ".png'><img src='/images/frames/sub_" . $decodedmonster->[$assistnum]{'card'}{'sub_attr_id'} . ".png'></div>";
           } else {
-            $assistdata .= "<img src='/images/frames/frame_" . $decodedmonster->[$assistnum]{'card'}{'attr_id'} . ".png'></div>";
+            $assistcard .= "<img src='/images/frames/frame_" . $decodedmonster->[$assistnum]{'card'}{'attr_id'} . ".png'></div>";
           }
           my $awakenings = scalar(@{$decodedmonster->[$assistnum]{'card'}{'awakenings'}});
           if ($awakenings > 0) {
             if ( @{$decodedmonster->[$assistnum]{'card'}{'awakenings'}}[0] == 49 ) {
-              my $awokenslots;
+              my $assistslots;
               for ( my $a = 0; $a < $awakenings; $a++ ) {
-                $awokenslots .= "<img src='/images/awakenings/" . @{$decodedmonster->[$assistnum]{'card'}{'awakenings'}}[$a] . ".png' alt='" . @{$decodedmonster->[$assistnum]{'card'}{'awakenings'}}[$a] . "'>";
+                $assistslots .= "<img src='/images/awakenings/" . @{$decodedmonster->[$assistnum]{'card'}{'awakenings'}}[$a] . ".png' alt='" . @{$decodedmonster->[$assistnum]{'card'}{'awakenings'}}[$a] . "'>";
+                $assistflag = 2;
               }
-              $awokentooltip = "<div class='teamslot awoken'><div class='column'>" . $assistdata . "</div><div class='column'>" . $awokenslots . "</div></div>";
+              $assisttooltip = "<div class='column'>" . $assistcard . "</div><div class='column'>" . $assistslots . "</div></div>";
             } else {
-              $awokentooltip = "<div class='teamslot'>" . $assistdata . "</div>";
+              $assisttooltip = "<div class='column'>" . $assistcard . "</div></div>";
+              $assistflag = 1;
             }
           }
-        } else {
-          $assistdata = "";
         }
         my $cardnum = $decodedbox->{'card'}[$x][5];
+        my $awakenings = scalar(@{$decodedmonster->[$cardnum]{'card'}{'awakenings'}});
+        my $awoken = $decodedbox->{'card'}[$x][9];
+        my $slots;
+        if ($awakenings > 0) {
+          for ( my $a = 0; $a < $awakenings; $a++ ) {
+            if ( $a < $awoken ) {
+              $slots .= "<img src='/images/awakenings/" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . ".png' alt='" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . "'>";
+            } else {
+              $slots .= "<img src='/images/awakenings/unawoken/" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . ".png' alt='" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . "'>";
+            }
+          }
+        }
+        my $tooltip;
+        if ( $assistflag == 2 ) {
+	  $tooltip = "<div class='teamslot awoken'><div class='column'>" . $slots . "</div>" . $assisttooltip;
+        } elsif ( $assistflag == 1 ) {
+	  $tooltip = "<div class='teamslot assist'><div class='column'>" . $slots . "</div>" . $assisttooltip;
+        } else {
+	  $tooltip = "<div class='teamslot noassist'>" . $slots . "</div>";
+        }
         my $framedata;
         if ( $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} > -1 ) {
           $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'><img class='lozad' data-src='/images/frames/sub_" . $decodedmonster->[$cardnum]{'card'}{'sub_attr_id'} . ".png'>";
@@ -265,17 +297,9 @@ for (my $t = 0; $t < $teamcount; $t++) {
           $framedata = "<img class='lozad' data-src='/images/frames/frame_" . $decodedmonster->[$cardnum]{'card'}{'attr_id'} . ".png'>";
         };
         if ( $s == 6 ) {
-          if (defined $awokentooltip) {
-            $teamlist[5] = "<td class='card' data-toggle='tooltip' data-html='true' data-placement='bottom' title=\"$awokentooltip\"><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
-          } else {
-            $teamlist[5] = "<td class='card' data-toggle='tooltip' data-html='true' data-placement='bottom'><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
-          }
+            $teamlist[5] = "<td class='card' data-toggle='tooltip' data-html='true' data-placement='bottom' title=\"$tooltip\"><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
         } else {
-          if (defined $awokentooltip) {
-            $teamlist[$s] = "<td class='card' data-toggle='tooltip' data-html='true' data-placement='bottom' title=\"$awokentooltip\"><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
-          } else {
-            $teamlist[$s] = "<td class='card' data-toggle='tooltip' data-html='true' data-placement='bottom'><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
-          }
+          $teamlist[$s] = "<td class='card' data-toggle='tooltip' data-html='true' data-placement='bottom' title=\"$tooltip\"><img class='lozad' data-src='/images/cards/card_" . $foundcard . ".png' alt='" .  $decodedmonster->[$cardnum]{'card'}{'name'}. "'>$framedata</td>";
         }
       }
     }
