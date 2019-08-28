@@ -116,8 +116,8 @@ button:hover {
 }
 
 .tooltip-inner {
-  background: rgba(255, 255, 255, 0.75);
-  max-width: 306px;
+  background: rgba(255, 255, 255, 0.90);
+  max-width: 600px;
 }
 
 .tooltip.show {
@@ -386,6 +386,7 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
       };
 
       $mobilehash{$c}->{'name'} = $decodedmonster->[$cardnum]{'card'}{'name'};
+      $mobilehash{$c}->{'name'} =~ s/"/'/g;
       $mobilehash{$c}->{'rarity'} = $decodedmonster->[$cardnum]{'card'}{'rarity'};
       $mobilehash{$c}->{'id'} = $decodedbox->{'card'}[$c][5];
       $mobilehash{$c}->{'paddedid'} = $cardnum;
@@ -399,7 +400,9 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
   $evotree = do { local $/; <$fh> };
   close($fh);
   $evotree =~ s/\>/&gt;/g;
-  $monsterline .= "<td><input type='image' data-toggle='tooltip' data-html='true' data-placement='right' src='/images/misc/evobutton.png' title='<pre>" . $evotree . "</pre>'</td>";
+  $evotree =~ s/([0-9]{1,4} )$decodedmonster->[$cardnum]{'card'}{'name'}/<strong>$1$decodedmonster->[$cardnum]{'card'}{'name'}<\/strong>/;
+  $evotree =~ s/"/'/g;
+  $monsterline .= "<td><input type='image' data-toggle='tooltip' data-html='true' data-placement='right' src='/images/misc/evobutton.png' title=\"<pre>" . $evotree . "</pre>\"</td>";
   my $skillmax;
   my $skilllevel;
   if ( ! defined $decodedmonster->[$cardnum]{'active_skill'}{'levels'} ) {
@@ -585,7 +588,7 @@ foreach my $line (@monsterarray) {
 $output .= "<div id='collapseTwo' class='panel-collapse collapse' data-parent='#buttonGroup'>\n";
 $output .= "  <table id='box' style='width:100%'>
     <thead>
-      <tr><th>ID</th><th style='display:none'>Main Attr</th><th style='display:none'>Sub Attr</th><th>Name</th><th>Rarity</th><th>Level</th><th>Type</th><th>Evo Tree</th><th>Skill</th><th>Awoken</th><th>Super</th><th>Latent</th><th>HP</th><th>ATK</th><th>RCV</th><th>MP</th></tr></thead>\n    <tbody>";
+      <tr><th>ID</th><th style='display:none'>Main Attr</th><th style='display:none'>Sub Attr</th><th>Name</th><th>Rarity</th><th>Level</th><th>Type</th><th>Evo Tree</th><th>Skill</th><th style='width=98px;'>Awoken</th><th>Super</th><th>Latent</th><th>HP</th><th>ATK</th><th>RCV</th><th>MP</th></tr></thead>\n    <tbody>";
 
 $output .= join "\n", @remplus;
 
