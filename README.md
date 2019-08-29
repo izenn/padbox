@@ -15,18 +15,14 @@ Beta
   * ~~super awakenings~~
   * ~~overhaul friend page~~
   * ~~sticky headers~~
-  * redo tooltips for friend leads
-  * add tooltips to box pages?
+  * ~~redo tooltips for teams~~
   * ~~add my teams list~~
   * ~~team badge icons~~
   * add self data
-  * add assists
   * ~~upload utility scripts (genevo, render, and cardcut)~~
   * document how to get json
   * document how to mine assets
   * ~~lazy image loading~~
-  * Framework?  angular? see angular-ui branch
-  * API for pad_proxy?
   * mobile (started)
 
 Thanks
