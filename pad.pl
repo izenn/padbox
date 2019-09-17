@@ -118,6 +118,7 @@ button:hover {
 .tooltip-inner {
   background: rgba(255, 255, 255, 0.90);
   max-width: 600px;
+  color: #000;
 }
 
 .tooltip.show {
@@ -148,6 +149,11 @@ pre {
 
 .column {
   flex: 33%;
+}
+
+.tamacolumns {
+  column-count: 3;
+  width: 200px;
 }
 
 #topbutton {
@@ -223,11 +229,13 @@ my $cardcount = scalar(@{$decodedbox->{'card'}});
 
 push @teamarray, "  <td style='width:55%; vertical-align:top'><table id='teams'>
     <thead>
-      <tr><th>Team</th><th>Lead</th><th>Sub 1</th><th>Sub 2</th><th>Sub 3</th><th>Sub 4</th><th>Helper</th><th>Badge</th></tr>
+      <tr><th>Team</th><th>Lead</th><th>Sub 1</th><th>Sub 2</th><th>Sub 3</th><th>Sub 4</th><th>Helper</th><th>TA</th><th>Badge</th></tr>
     </thead>
     <tbody>";
 
 for (my $t = 0; $t < $teamcount; $t++) {
+  my @team_awoken_array;
+  my %team_awoken_hash;
   my $teamrow;
   my @teamlist = ("<td>&nbsp;</td>") x 6;
   my $teamnum = $t + 1;
@@ -259,6 +267,7 @@ for (my $t = 0; $t < $teamcount; $t++) {
             if ( @{$decodedmonster->[$assistnum]{'card'}{'awakenings'}}[0] == 49 ) {
               my $assistslots;
               for ( my $a = 0; $a < $awakenings; $a++ ) {
+                push @team_awoken_array, @{$decodedmonster->[$assistnum]{'card'}{'awakenings'}}[$a];
                 $assistslots .= "<img src='/images/awakenings/" . @{$decodedmonster->[$assistnum]{'card'}{'awakenings'}}[$a] . ".png' alt='" . @{$decodedmonster->[$assistnum]{'card'}{'awakenings'}}[$a] . "'>";
                 $assistflag = 2;
               }
@@ -276,6 +285,7 @@ for (my $t = 0; $t < $teamcount; $t++) {
         if ($awakenings > 0) {
           for ( my $a = 0; $a < $awakenings; $a++ ) {
             if ( $a < $awoken ) {
+                push @team_awoken_array, @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a];
               $slots .= "<img src='/images/awakenings/" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . ".png' alt='" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . "'>";
             } else {
               $slots .= "<img src='/images/awakenings/unawoken/" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . ".png' alt='" . @{$decodedmonster->[$cardnum]{'card'}{'awakenings'}}[$a] . "'>";
@@ -305,6 +315,9 @@ for (my $t = 0; $t < $teamcount; $t++) {
     }
   }
   $teamrow .= join("", @teamlist);
+  map($team_awoken_hash{$_}++, @team_awoken_array);
+  my $team_awakenings = join(' ',map("<img src='/images/awakenings/" . $_ . ".png'>x" . $team_awoken_hash{$_} . "<br>", sort {$team_awoken_hash{$a}<=>$team_awoken_hash{$b}} keys %team_awoken_hash));
+  $teamrow .= "<td><img class='lozad' data-src='/images/misc/tama.png' data-toggle='tooltip' data-html='true' data-placement='left' title=\"<div class='tamacolumns'>$team_awakenings</div>\">";
   $teamrow .= "<td><img class='lozad' data-src='/images/team/" . $decodedbox->{'decksb'}{'decks'}[$t][5] . ".png'></td>";
   $teamrow .= "</tr>";
   push @teamarray, $teamrow; 
