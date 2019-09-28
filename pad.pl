@@ -413,7 +413,9 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
   $evotree = do { local $/; <$fh> };
   close($fh);
   $evotree =~ s/\>/&gt;/g;
-  $evotree =~ s/([0-9]{1,4} ).*/<strong>$1$decodedmonster->[$cardnum]{'card'}{'name'}<\/strong>/;
+  my $number = $cardnum;
+  $number += 0;
+  $evotree =~ s/($number .*)/<strong>$1<\/strong>/;
   $evotree =~ s/"/'/g;
   $monsterline .= "<td><input type='image' data-toggle='tooltip' data-html='true' data-placement='right' src='/images/misc/evobutton.png' title=\"<pre>" . $evotree . "</pre>\"</td>";
   my $skillmax;
