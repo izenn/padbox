@@ -3,7 +3,6 @@ use strict;
 use warnings;
 use JSON qw( decode_json );
 use Data::Dumper qw( Dumper );
-binmode STDOUT, ":encoding(UTF-8)";
 
 my $boxjson;
 my $monsterjson;
@@ -797,7 +796,7 @@ observer.observe();
 </body></html>';
 
 #print "writing to file\n";
-open (my $fh, '>', "box/$userid.html");
+open (my $fh, '>:encoding(UTF-8)', "box/$userid.html");
   print $fh $output;
 close $fh;
 
