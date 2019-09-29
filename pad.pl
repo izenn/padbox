@@ -804,3 +804,5 @@ close $fh;
 open (my $mobilefile, '>', "m/$userid.html");
   print $mobilefile $mobileoutput;
 close $mobilefile;
+
+print "done";

@@ -18,9 +18,8 @@ Beta
   * ~~redo tooltips for teams~~
   * ~~add my teams list~~
   * ~~team badge icons~~
-  * add self data
   * ~~upload utility scripts (genevo, render, and cardcut)~~
-  * document how to get json
+  * document how to get json (IOS done)
   * document how to mine assets
   * ~~lazy image loading~~
   * mobile (started)
