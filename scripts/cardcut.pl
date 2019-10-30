@@ -6,14 +6,15 @@ use warnings;
 
 `mkdir cards`;
 
-my @bcarray = `ls data/HT/bc/cards_*.bc`;
+my @bcarray = `ls data/USA/bc/cards_*.bc`;
 chomp @bcarray;
 
 foreach my $bc (@bcarray) {
-  `python PADTextureTool.py $bc`;
+  print $bc . "\n";
+  `python ./PADTextureTool.py $bc`;
 }
 
-`mv data/HT/bc/CARD*.PNG cards`;
+`mv data/USA/bc/CARD*.PNG cards`;
 
 my @cardarray = `ls cards/CARDS*.PNG`;
 chomp @cardarray;
@@ -32,6 +33,7 @@ foreach my $filename (@cardarray) {
       my $num = "$front$y$end";
       $num = $num + 1;
       my $cardnum = sprintf("%05d",$num);
+      print $cardnum . "\n";
       my $cmd = "convert $filename -crop 96x96+$xoffset+$yoffset cards/card_$cardnum.png";
       `$cmd`;
     }

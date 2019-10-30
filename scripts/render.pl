@@ -9,7 +9,7 @@ print "do you need to 'yarn update'?\n";
 
 `mkdir extracted`;
 
-my @binarray = `cd data/HT/bin/; ls mons_*`;
+my @binarray = `cd data/USA/bin/; ls mons_*`;
 chomp @binarray;
 my @extractarray = `cd extracted/; ls MONS_*`;
 chomp @extractarray;
@@ -33,7 +33,7 @@ my %done = map {($_, 1)} @fixedarray;
 my @needed = grep {!$done{$_}} @binarray;
 
 foreach my $item (@needed) {
-  my $render = "yarn render --bin data/HT/bin/mons_$item.bin --out extracted/MONS_" . sprintf("%05d",$item) . ".png --nobg";
+  my $render = "yarn render --bin data/USA/bin/mons_$item.bin --out extracted/MONS_" . sprintf("%05d",$item) . ".png --nobg";
   `$render`;
   my $mogrify = "mogrify -trim +repage extracted/MONS_" . sprintf("%05d",$item) . ".png";
   `$mogrify`

@@ -2,7 +2,6 @@
 use warnings;
 use JSON qw( decode_json );
 use Data::Dumper qw( Dumper );
-binmode STDOUT, ":encoding(UTF-8)";
 
 my $monsterjson;
 
@@ -61,7 +60,7 @@ for my $group (values %evohash) {
       draw_tree($card);
     select STDOUT;
     my $paddedfamily = sprintf("%05d", $card->{'family'});
-    open(my $fh, '>', "../evotrees/" . $paddedfamily . ".txt");
+    open(my $fh, '>:encoding(UTF-8)', "../evotrees/" . $paddedfamily . ".txt");
       print $fh $out; 
     close $fh;
   }
