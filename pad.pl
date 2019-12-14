@@ -408,7 +408,6 @@ for (my $c = 0; $c < $cardcount; $c++ ) {
 
   my $paddedfamily = sprintf("%05d", $decodedmonster->[$cardnum]{'card'}{'base_id'});
   my $evotree;
-  print $paddedfamily . "\n";
   open(my $fh, '<', "evotrees/" . $paddedfamily . ".txt");
   $evotree = do { local $/; <$fh> };
   close($fh);
