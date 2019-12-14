@@ -20,15 +20,10 @@ my %evohash;
 for (my $i = 1; $i < $count; $i++) {
   next if $decodedmonster->[$i]{'card'}{'card_id'} > 9999; 
   
-    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'name'} = $decodedmonster->[$i]{'card'}{'name'},
-    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'ancestor'} = $decodedmonster->[$i]{'card'}{'ancestor_id'},
-    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'id'} = $decodedmonster->[$i]{'card'}{'card_id'},
-    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'family'} = $decodedmonster->[$i]{'card'}{'base_id'},
-#    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'evo1'} = $decodedmonster->[$i]{'card'}{'evo_mat_id_1'},
-#    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'evo2'} = $decodedmonster->[$i]{'card'}{'evo_mat_id_2'},
-#    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'evo3'} = $decodedmonster->[$i]{'card'}{'evo_mat_id_3'},
-#    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'evo4'} = $decodedmonster->[$i]{'card'}{'evo_mat_id_4'},
-#    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'card'}{'card_id'}}{'evo5'} = $decodedmonster->[$i]{'card'}{'evo_mat_id_5'}
+    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'monster_no'}}{'name'} = $decodedmonster->[$i]{'card'}{'name'},
+    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'monster_no'}}{'ancestor'} = $decodedmonster->[$i]{'card'}{'ancestor_id'},
+    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'monster_no'}}{'id'} = $decodedmonster->[$i]{'monster_no'},
+    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'monster_no'}}{'family'} = $decodedmonster->[$i]{'card'}{'base_id'},
 };
 
 # Convert each top-level group into a tree of evo...
