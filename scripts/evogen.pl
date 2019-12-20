@@ -18,12 +18,11 @@ my $count = keys $decodedmonster;
 my %evohash;
 
 for (my $i = 1; $i < $count; $i++) {
-  next if $decodedmonster->[$i]{'card'}{'card_id'} > 9999; 
-  
-    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'monster_no'}}{'name'} = $decodedmonster->[$i]{'card'}{'name'},
-    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'monster_no'}}{'ancestor'} = $decodedmonster->[$i]{'card'}{'ancestor_id'},
-    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'monster_no'}}{'id'} = $decodedmonster->[$i]{'monster_no'},
-    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'monster_no'}}{'family'} = $decodedmonster->[$i]{'card'}{'base_id'},
+  next if $decodedmonster->[$i]{'monster_no'} > 9999; 
+    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'monster_no'}}{'name'} = $decodedmonster->[$i]{'card'}{'name'};
+    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'monster_no'}}{'ancestor'} = $decodedmonster->[$i]{'card'}{'ancestor_id'};
+    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'monster_no'}}{'id'} = $decodedmonster->[$i]{'monster_no'};
+    $evohash{$decodedmonster->[$i]{'card'}{'base_id'}}{$decodedmonster->[$i]{'monster_no'}}{'family'} = $decodedmonster->[$i]{'card'}{'base_id'};
 };
 
 # Convert each top-level group into a tree of evo...
@@ -52,6 +51,7 @@ for my $group (values %evohash) {
     my $out;
     open SUBOUT, '>', \$out;
     select SUBOUT;
+binmode(SUBOUT, ":utf8");
       draw_tree($card);
     select STDOUT;
     my $paddedfamily = sprintf("%05d", $card->{'family'});

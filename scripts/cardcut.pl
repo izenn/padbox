@@ -75,6 +75,7 @@ foreach my $filename (@cardarray) {
   }
 }
   `find cards/ -type f -size -512c -delete`;
+  `mv checksum.md5 oldsum.md5`;
   `md5sum cards/CARDS* > checksum.md5`;
-  `rm cards/CARDS*`;
+#  `rm cards/CARDS*`;
 
